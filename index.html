@@ -767,6 +767,9 @@
         }, { threshold: 0.12 });
         function observe(el) { observer.observe(el); }
 
+        // Observa elementos fade-up já presentes no HTML estático
+        document.querySelectorAll('.fade-up').forEach(observe);
+
         // ── Loader genérico ───────────────────────────────────
         async function loadJSON(path) {
             const res = await fetch(path);
