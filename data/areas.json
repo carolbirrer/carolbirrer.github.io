@@ -1,27 +1,27 @@
 {
   "label": "Áreas de Atuação",
-  "title": "Expertise multidisciplinar",
-  "subtitle": "Conectando ferramentas moleculares, espaciais e conceituais para ciência de impacto real.",
+  "title": "Expertise em Data Science",
+  "subtitle": "Combinando rigor científico com ferramentas modernas de análise para gerar impacto real nos dados.",
   "areas": [
     {
-      "icon": "fas fa-dna",
-      "title": "Filogeografia",
-      "description": "Distribuição geográfica de linhagens genéticas para desvendar processos evolutivos e históricos em carnívoros neotropicais."
+      "icon": "fas fa-brain",
+      "title": "Machine Learning",
+      "description": "Desenvolvimento e validação de modelos preditivos com Python e scikit-learn — da exploração dos dados ao deploy em produção."
+    },
+    {
+      "icon": "fas fa-chart-bar",
+      "title": "Análise Estatística",
+      "description": "Testes de hipótese, modelagem bayesiana, séries temporais e inferência causal para tomadas de decisão embasadas."
     },
     {
       "icon": "fas fa-map-marked-alt",
-      "title": "Modelagem Espacial",
-      "description": "Ferramentas computacionais em R e GIS para prever áreas de ocorrência, refúgios climáticos e corredores ecológicos."
+      "title": "Dados Geoespaciais",
+      "description": "Análise e visualização de dados espaciais com GeoPandas, QGIS e R — da coleta ao mapeamento interativo."
     },
     {
-      "icon": "fas fa-leaf",
-      "title": "Conservação",
-      "description": "Planejamento estratégico para preservação de mamíferos aquáticos e ecossistemas estuarinos da América do Sul."
-    },
-    {
-      "icon": "fas fa-microscope",
-      "title": "Divulgação Científica",
-      "description": "Comunicação científica, advocacy e políticas com foco em diversidade, inclusão e financiamento da ciência no Brasil."
+      "icon": "fas fa-chart-line",
+      "title": "Visualização & BI",
+      "description": "Dashboards e relatórios interativos com Plotly, ggplot2 e Power BI, transformando dados brutos em narrativas visuais."
     }
   ]
 }

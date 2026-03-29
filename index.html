@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dra. Caroline Gonçalves Birrer | Ecóloga & Pesquisadora</title>
-    <meta name="description" content="Doutora em Ecologia pela UFBA. Especialista em conservação de biodiversidade, filogeografia e evolução de carnívoros neotropicais.">
+    <title>Dra. Caroline Gonçalves Birrer | Cientista de Dados & Pesquisadora</title>
+    <meta name="description" content="Doutora pela UFBA. Especialista em Data Science, Machine Learning, análise estatística e visualização de dados para decisões baseadas em evidências.">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -38,7 +38,7 @@
             background: rgba(255,255,255,0.97);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            padding: 1.2rem 8%;
+            padding: clamp(0.7rem, 1.5vh, 1.2rem) clamp(4%, 8vw, 8%);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -49,7 +49,7 @@
             transition: padding 0.35s ease, box-shadow 0.35s ease;
         }
         nav.scrolled {
-            padding: 0.7rem 8%;
+            padding: clamp(0.4rem, 0.8vh, 0.7rem) clamp(4%, 8vw, 8%);
             box-shadow: 0 4px 30px rgba(26,53,40,0.1);
         }
 
@@ -78,7 +78,7 @@
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 2.5rem;
+            gap: clamp(1.2rem, 2.5vw, 2.5rem);
             align-items: center;
         }
         .nav-links a {
@@ -114,19 +114,40 @@
 
         /* ── HERO ────────────────────────────────────────── */
         .hero {
-            background: var(--primary-deep);
+            background:
+                linear-gradient(to bottom right, rgba(26,53,40,0.82) 0%, rgba(26,53,40,0.65) 100%),
+                url('images/bg_hero_01.jpeg') center center / cover no-repeat;
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 9rem 8% 6rem;
+            justify-content: space-between;
+            gap: clamp(2rem, 5vw, 4rem);
+            padding: clamp(6rem, 12vh, 10rem) clamp(4%, 8vw, 8%) clamp(4rem, 8vh, 6rem);
             position: relative;
             overflow: hidden;
+        }
+
+        /* ── HERO VISUAL (imagem direita) ────────────────── */
+        .hero-visual {
+            flex-shrink: 0;
+            width: clamp(240px, 30vw, 440px);
+            position: relative;
+            z-index: 1;
+        }
+        .hero-visual img {
+            width: 100%;
+            display: block;
+            border-radius: 24px;
+            object-fit: cover;
+            aspect-ratio: 3 / 4;
+            border: 2px solid rgba(255,255,255,0.1);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.45);
         }
         .hero::before {
             content: '';
             position: absolute;
             top: -40%; right: -15%;
-            width: 750px; height: 750px;
+            width: clamp(320px, 52vw, 750px); height: clamp(320px, 52vw, 750px);
             background: radial-gradient(circle, rgba(74,124,89,0.22) 0%, transparent 68%);
             pointer-events: none;
         }
@@ -134,13 +155,13 @@
             content: '';
             position: absolute;
             bottom: -25%; left: -8%;
-            width: 520px; height: 520px;
+            width: clamp(220px, 36vw, 520px); height: clamp(220px, 36vw, 520px);
             background: radial-gradient(circle, rgba(184,121,26,0.1) 0%, transparent 68%);
             pointer-events: none;
         }
 
         .hero-content {
-            max-width: 760px;
+            max-width: clamp(480px, 65vw, 760px);
             position: relative;
             z-index: 1;
         }
@@ -174,10 +195,10 @@
             color: #7fc499;
         }
         .hero-desc {
-            font-size: 1.1rem;
+            font-size: clamp(0.95rem, 1.2vw, 1.15rem);
             color: rgba(240,236,228,0.7);
-            max-width: 600px;
-            margin-bottom: 2.5rem;
+            max-width: min(600px, 90%);
+            margin-bottom: clamp(1.8rem, 3vw, 2.5rem);
             font-weight: 300;
             line-height: 1.8;
         }
@@ -252,14 +273,14 @@
             grid-template-columns: repeat(3, 1fr);
         }
         .stat-item {
-            padding: 2.8rem 2rem;
+            padding: clamp(1.8rem, 3.5vw, 2.8rem) clamp(1rem, 2vw, 2rem);
             text-align: center;
             border-right: 1px solid rgba(255,255,255,0.1);
         }
         .stat-item:last-child { border-right: none; }
         .stat-number {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: clamp(2rem, 3.5vw, 3.8rem);
             font-weight: 900;
             color: var(--off-white);
             display: block;
@@ -267,7 +288,7 @@
             margin-bottom: 0.4rem;
         }
         .stat-label {
-            font-size: 0.75rem;
+            font-size: clamp(0.65rem, 0.8vw, 0.78rem);
             color: rgba(240,236,228,0.55);
             letter-spacing: 1.5px;
             text-transform: uppercase;
@@ -276,10 +297,10 @@
 
         /* ── SOBRE ───────────────────────────────────────── */
         #sobre {
-            padding: 8rem 8%;
+            padding: clamp(4rem, 8vw, 8rem) clamp(4%, 8vw, 8%);
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 6rem;
+            gap: clamp(3rem, 6vw, 6rem);
             align-items: center;
         }
         .label-tag {
@@ -293,11 +314,11 @@
         }
         .sobre-text h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.4rem;
+            font-size: clamp(1.8rem, 2.8vw, 2.8rem);
             font-weight: 700;
             color: var(--primary-deep);
             line-height: 1.25;
-            margin-bottom: 1.5rem;
+            margin-bottom: clamp(1rem, 1.8vw, 1.5rem);
         }
         .sobre-text p {
             color: var(--text-muted);
@@ -306,6 +327,20 @@
         }
         .sobre-text strong { color: var(--primary-dark); }
 
+        /* ── SOBRE FOTO DE PERFIL ─────────────────────── */
+        .sobre-right { display: flex; flex-direction: column; gap: 1.5rem; }
+        .sobre-photo {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(74,124,89,0.15);
+            box-shadow: 0 12px 40px rgba(26,53,40,0.12);
+        }
+        .sobre-photo img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 4 / 3;
+        }
         .sobre-highlights { display: flex; flex-direction: column; gap: 1.25rem; }
         .highlight-item {
             display: flex;
@@ -340,13 +375,13 @@
 
         /* ── EXPERTISE ───────────────────────────────────── */
         #expertise {
-            padding: 8rem 8%;
+            padding: clamp(4rem, 8vw, 8rem) clamp(4%, 8vw, 8%);
             background: var(--primary-deep);
         }
-        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-header { text-align: center; margin-bottom: clamp(2.5rem, 4vw, 4rem); }
         .section-header h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.4rem;
+            font-size: clamp(1.8rem, 2.8vw, 2.8rem);
             font-weight: 700;
         }
         .section-sub {
@@ -365,7 +400,7 @@
         .expertise-card {
             background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,255,255,0.09);
-            padding: 2.5rem 2rem;
+            padding: clamp(1.5rem, 2.5vw, 2.5rem) clamp(1.2rem, 2vw, 2rem);
             border-radius: 18px;
             transition: all 0.35s ease;
             position: relative;
@@ -388,30 +423,30 @@
         }
         .expertise-card:hover::before { transform: scaleX(1); }
         .card-icon {
-            width: 58px; height: 58px;
+            width: clamp(44px, 4.5vw, 58px); height: clamp(44px, 4.5vw, 58px);
             background: rgba(74,124,89,0.18);
             border-radius: 15px;
             display: flex; align-items: center; justify-content: center;
-            font-size: 1.5rem;
+            font-size: clamp(1.1rem, 1.6vw, 1.5rem);
             color: #7fc499;
-            margin-bottom: 1.5rem;
+            margin-bottom: clamp(1rem, 1.8vw, 1.5rem);
         }
         .expertise-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
+            font-size: clamp(1rem, 1.5vw, 1.3rem);
             color: var(--off-white);
             margin-bottom: 0.75rem;
             font-weight: 700;
         }
         .expertise-card p {
-            font-size: 0.9rem;
+            font-size: clamp(0.82rem, 1vw, 0.95rem);
             color: rgba(240,236,228,0.5);
             line-height: 1.75;
         }
 
         /* ── PUBLICAÇÕES ─────────────────────────────────── */
         #publicacoes {
-            padding: 8rem 8%;
+            padding: clamp(4rem, 8vw, 8rem) clamp(4%, 8vw, 8%);
             background: var(--white);
         }
         #publicacoes .section-header { text-align: left; }
@@ -419,11 +454,12 @@
         #publicacoes .section-sub { color: var(--text-muted); }
 
         .pub-grid { display: grid; gap: 1.5rem; max-width: 960px; margin-top: 1rem; }
+
         .pub-card {
             display: grid;
-            grid-template-columns: 56px 1fr;
-            gap: 1.75rem;
-            padding: 2.2rem 2rem;
+            grid-template-columns: clamp(40px, 4vw, 56px) 1fr;
+            gap: clamp(1.2rem, 2vw, 1.75rem);
+            padding: clamp(1.5rem, 2.5vw, 2.2rem) clamp(1.2rem, 2vw, 2rem);
             border: 1px solid rgba(74,124,89,0.14);
             border-radius: 18px;
             transition: all 0.3s ease;
@@ -456,7 +492,7 @@
         }
         .pub-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.15rem;
+            font-size: clamp(1rem, 1.3vw, 1.2rem);
             font-weight: 700;
             color: var(--dark);
             text-decoration: none;
@@ -487,19 +523,19 @@
         /* ── FOOTER ──────────────────────────────────────── */
         footer {
             background: var(--primary-deep);
-            padding: 6rem 8% 3rem;
+            padding: clamp(4rem, 7vw, 6rem) clamp(4%, 8vw, 8%) clamp(2rem, 3.5vw, 3rem);
         }
         .footer-top {
             display: grid;
             grid-template-columns: 1.6fr 1fr;
-            gap: 5rem;
-            padding-bottom: 4rem;
+            gap: clamp(3rem, 5vw, 5rem);
+            padding-bottom: clamp(2.5rem, 4vw, 4rem);
             border-bottom: 1px solid rgba(255,255,255,0.08);
-            margin-bottom: 3rem;
+            margin-bottom: clamp(2rem, 3vw, 3rem);
         }
         .footer-brand h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.65rem;
+            font-size: clamp(1.3rem, 2vw, 1.8rem);
             color: var(--off-white);
             font-weight: 700;
             margin-bottom: 0.4rem;
@@ -650,9 +686,10 @@
         @media (max-width: 768px) {
             nav { padding: 1rem 5%; }
             .nav-links { display: none; }
-            .hero { padding: 7.5rem 5% 5rem; min-height: auto; }
-            #sobre, #expertise, #publicacoes { padding: 5rem 5%; }
-            footer { padding: 4rem 5% 2rem; }
+            .hero { padding: 7rem 5% 4rem; min-height: auto; flex-direction: column; }
+            .hero-visual { display: none; }
+            #sobre, #expertise, #publicacoes { padding: 4rem 5%; }
+            footer { padding: 3.5rem 5% 2rem; }
             .pub-card { grid-template-columns: 1fr; }
             .pub-year { writing-mode: horizontal-tb; transform: none; }
             .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
@@ -666,8 +703,8 @@
         <a href="#" class="logo">
             <div class="logo-monogram">CB</div>
             <div class="logo-text">
-                <span class="logo-name">Caroline G. Birrer</span>
-                <span class="logo-title">Dra. · Ecóloga &amp; Pesquisadora</span>
+                <span class="logo-name">Dra. Caroline G. Birrer</span>
+                <span class="logo-title">Ecóloga &amp; Pesquisadora</span>
             </div>
         </a>
         <ul class="nav-links">
@@ -682,6 +719,7 @@
     <!-- Renderizado via data/hero.json -->
     <header class="hero" id="hero-section">
         <div class="hero-content" id="hero-content"></div>
+        <div class="hero-visual" id="hero-visual"></div>
         <div class="hero-scroll"><span class="scroll-line"></span> Rolar</div>
     </header>
 
@@ -798,6 +836,11 @@
                 <div class="hero-badges">${badgesHtml}</div>
                 <div class="hero-cta">${ctaHtml}</div>`;
 
+            if (d.photo) {
+                document.getElementById('hero-visual').innerHTML =
+                    `<img src="${esc(d.photo)}" alt="${esc(d.photo_alt || 'Visual de destaque')}" loading="lazy">`;
+            }
+
             const statsGrid = document.getElementById('stats-grid');
             d.stats.forEach((s, i) => {
                 const el = document.createElement('div');
@@ -824,6 +867,10 @@
                     </div>
                 </div>`).join('');
 
+            const photoHtml = d.photo
+                ? `<div class="sobre-photo"><img src="${esc(d.photo)}" alt="${esc(d.photo_alt || 'Foto de perfil')}" loading="lazy"></div>`
+                : '';
+
             const sobre = document.getElementById('sobre');
             sobre.innerHTML = `
                 <div class="sobre-text fade-up">
@@ -831,8 +878,9 @@
                     <h2>${esc(d.title)}</h2>
                     ${parasHtml}
                 </div>
-                <div class="sobre-highlights fade-up" style="transition-delay:.15s">
-                    ${highlightsHtml}
+                <div class="sobre-right fade-up" style="transition-delay:.15s">
+                    ${photoHtml}
+                    <div class="sobre-highlights">${highlightsHtml}</div>
                 </div>`;
             sobre.querySelectorAll('.fade-up').forEach(observe);
         }).catch(console.error);

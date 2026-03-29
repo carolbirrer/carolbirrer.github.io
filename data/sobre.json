@@ -1,25 +1,13 @@
 {
-  "label": "Sobre a Pesquisadora",
-  "title": "Uma trajetória construída na fronteira entre ciência e conservação",
+  "label": "Sobre a Profissional",
+  "title": "Ciência de dados com profundidade analítica e visão estratégica",
   "paragraphs": [
-    "Minha pesquisa é movida pela compreensão profunda da biodiversidade no Neotrópico. Através da interseção entre <strong>genética de populações, modelagem de nicho e filogeografia</strong>, desenvolvo estratégias baseadas em evidências para a conservação de <em>Lutrinae</em> — lontras e ariranhas.",
-    "Além da investigação técnica, sou uma voz ativa na <strong>democratização científica</strong>, na equidade de gênero na academia e na defesa de políticas robustas de financiamento à ciência no Brasil."
+    "Com doutorado pela UFBA e mais de uma década construindo modelos preditivos e análises estatísticas robustas, meu trabalho une <strong>machine learning, visualização de dados e inferência causal</strong> para transformar grandes volumes de informação em decisões embasadas.",
+    "Minha formação científica me diferencia: aplico o mesmo rigor metodológico da pesquisa acadêmica aos desafios do mundo real — seja em <strong>saúde, meio ambiente, agronegócio ou políticas públicas</strong>."
   ],
   "highlights": [
-    {
-      "icon": "fas fa-dna",
-      "title": "Genética de Populações",
-      "description": "Análise de diversidade genética para informar unidades evolutivamente significativas."
-    },
-    {
-      "icon": "fas fa-map-marked-alt",
-      "title": "Modelagem de Nicho (SDM)",
-      "description": "Mapeamento de distribuições atuais e futuras sob cenários de mudança climática."
-    },
-    {
-      "icon": "fas fa-balance-scale",
-      "title": "Ética & Equidade na Ciência",
-      "description": "Advocacy por inclusão e diversidade em ambientes acadêmicos e de pesquisa."
-    }
-  ]
+   
+  ],
+  "photo": "images/map.png",
+  "photo_alt": "Dra. Caroline Gonçalves Birrer"
 }

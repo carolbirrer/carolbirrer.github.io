@@ -1,19 +1,19 @@
 {
-  "eyebrow": "Ecóloga · Pesquisadora · Doutora UFBA",
-  "headline": "Ciência que",
-  "headline_em": "transforma",
-  "headline_suffix": "a conservação",
-  "description": "Dra. Caroline Gonçalves Birrer une genética, filogeografia e modelagem espacial para revelar a história evolutiva dos carnívoros neotropicais — e construir estratégias reais de conservação.",
+  "eyebrow": "Cientista de Dados · Pesquisadora · Doutora UFBA",
+  "headline": "Dados que",
+  "headline_em": "revelam",
+  "headline_suffix": "decisões mais inteligentes",
+  "description": "Dra. Caroline Gonçalves Birrer transforma dados complexos em insights acionáveis, unindo rigor científico, machine learning e visualização avançada para resolver problemas reais nos setores público e privado.",
   "badges": [
-    { "icon": "fas fa-graduation-cap", "text": "Doutora em Ecologia · UFBA" },
-    { "icon": "fas fa-microscope",     "text": "Lutrinae & Biogeografia Neotropical" },
-    { "icon": "fas fa-newspaper",      "text": "Publicações em Science & Mammal Review" }
+    { "icon": "fas fa-graduation-cap", "text": "Doutora · UFBA" },
+    { "icon": "fab fa-python",         "text": "Python · R · SQL" },
+    { "icon": "fas fa-brain",          "text": "Machine Learning & Modelagem Estatística" }
   ],
   "cta": [
     {
-      "label": "Ver Publicações",
+      "label": "Ver Projetos",
       "href": "#publicacoes",
-      "icon": "fas fa-book-open",
+      "icon": "fas fa-chart-line",
       "style": "btn-primary",
       "external": false
     },
@@ -26,8 +26,10 @@
     }
   ],
   "stats": [
-    { "number": "3+",  "label": "Publicações Científicas" },
-    { "number": "10+", "label": "Anos de Pesquisa" },
-    { "number": "2",   "label": "Espécies Estudadas" }
-  ]
+    { "number": "10+", "label": "Anos em Análise de Dados" },
+    { "number": "30+", "label": "Projetos Desenvolvidos" },
+    { "number": "3+",  "label": "Publicações Científicas" }
+  ],
+  "photo": "images/map.png",
+  "photo_alt": "Dra. Caroline Gonçalves Birrer"
 }

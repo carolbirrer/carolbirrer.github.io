@@ -39,7 +39,7 @@
             background: rgba(255,255,255,0.97);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            padding: 1.2rem 8%;
+            padding: clamp(0.7rem, 1.5vh, 1.2rem) clamp(4%, 8vw, 8%);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -118,7 +118,7 @@
         /* ── ARTIGO HERO ────────────────────────────────────── */
         .pub-hero {
             background: var(--primary-deep);
-            padding: 6rem 8% 5rem;
+            padding: clamp(4rem, 8vh, 6rem) clamp(4%, 8vw, 8%) clamp(3rem, 6vh, 5rem);
             position: relative;
             overflow: hidden;
         }
@@ -126,11 +126,11 @@
             content: '';
             position: absolute;
             top: -30%; right: -10%;
-            width: 600px; height: 600px;
+            width: clamp(280px, 42vw, 600px); height: clamp(280px, 42vw, 600px);
             background: radial-gradient(circle, rgba(74,124,89,0.18) 0%, transparent 70%);
             pointer-events: none;
         }
-        .pub-hero-inner { position: relative; z-index: 1; max-width: 860px; }
+        .pub-hero-inner { position: relative; z-index: 1; max-width: clamp(520px, 72vw, 860px); }
 
         .pub-meta-top {
             display: flex;
@@ -194,7 +194,7 @@
         /* ── ACTIONS BAR ────────────────────────────────────── */
         .pub-actions {
             background: var(--light);
-            padding: 1.5rem 8%;
+            padding: clamp(1rem, 2vh, 1.5rem) clamp(4%, 8vw, 8%);
             display: flex;
             align-items: center;
             gap: 1rem;
@@ -238,9 +238,9 @@
         /* ── CONTEÚDO PRINCIPAL ─────────────────────────────── */
         .pub-body {
             display: grid;
-            grid-template-columns: 1fr 320px;
-            gap: 4rem;
-            padding: 5rem 8%;
+            grid-template-columns: 1fr clamp(240px, 25vw, 320px);
+            gap: clamp(2.5rem, 4vw, 4rem);
+            padding: clamp(3rem, 5vw, 5rem) clamp(4%, 8vw, 8%);
             align-items: start;
             max-width: 1280px;
             margin: 0 auto;
@@ -258,10 +258,10 @@
         }
         .pub-main h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 1.8vw, 1.6rem);
             font-weight: 700;
             color: var(--primary-deep);
-            margin-bottom: 1.25rem;
+            margin-bottom: clamp(0.8rem, 1.5vw, 1.25rem);
         }
         .pub-abstract {
             font-size: 1rem;
@@ -296,7 +296,7 @@
         }
         .md-body h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.9rem;
+            font-size: clamp(1.5rem, 2.2vw, 2rem);
             font-weight: 900;
             color: var(--primary-deep);
             margin: 2.5rem 0 1rem;
@@ -305,7 +305,7 @@
         .md-body h1:first-child { margin-top: 0; }
         .md-body h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
+            font-size: clamp(1.15rem, 1.6vw, 1.5rem);
             font-weight: 700;
             color: var(--primary-deep);
             margin: 2.5rem 0 0.9rem;
@@ -313,7 +313,7 @@
             border-bottom: 2px solid var(--primary-light);
         }
         .md-body h3 {
-            font-size: 1.05rem;
+            font-size: clamp(0.95rem, 1.2vw, 1.1rem);
             font-weight: 700;
             color: var(--primary-dark);
             margin: 2rem 0 0.7rem;
@@ -507,7 +507,7 @@
         /* ── OUTROS TRABALHOS ───────────────────────────────── */
         .pub-more {
             background: var(--primary-deep);
-            padding: 5rem 8%;
+            padding: clamp(3rem, 5vw, 5rem) clamp(4%, 8vw, 8%);
         }
         .pub-more-header {
             margin-bottom: 2.5rem;
@@ -523,7 +523,7 @@
         }
         .pub-more-header h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: clamp(1.4rem, 2.2vw, 2rem);
             color: var(--off-white);
             font-weight: 700;
         }
@@ -571,7 +571,7 @@
         footer {
             background: var(--primary-deep);
             border-top: 1px solid rgba(255,255,255,0.06);
-            padding: 2rem 8%;
+            padding: clamp(1.2rem, 2.5vh, 2rem) clamp(4%, 8vw, 8%);
             display: flex;
             justify-content: space-between;
             align-items: center;
