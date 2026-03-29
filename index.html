@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Caroline Gonçalves Birrer | Ecóloga & Pesquisadora</title>
+    <meta name="description" content="Doutora em Ecologia pela UFBA. Especialista em conservação de biodiversidade, filogeografia e evolução de carnívoros neotropicais.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary:        #4a7c59;
+            --primary-dark:   #2a5239;
+            --primary-deep:   #1a3528;
+            --accent:         #b8791a;
+            --accent-light:   #f2e6cc;
+            --primary-light:  #e6f0ea;
+            --light:          #f4f7f5;
+            --dark:           #1c2820;
+            --text-muted:     #5c6e63;
+            --white:          #ffffff;
+            --off-white:      #f0ece4;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background: var(--white);
+        }
+
+        /* ── NAV ─────────────────────────────────────────── */
+        nav {
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1.2rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(74,124,89,0.12);
+            transition: padding 0.35s ease, box-shadow 0.35s ease;
+        }
+        nav.scrolled {
+            padding: 0.7rem 8%;
+            box-shadow: 0 4px 30px rgba(26,53,40,0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+        .logo-monogram {
+            width: 40px; height: 40px;
+            background: var(--primary-deep);
+            color: var(--off-white);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            flex-shrink: 0;
+        }
+        .logo-text { display: flex; flex-direction: column; line-height: 1.2; }
+        .logo-name  { font-weight: 600; font-size: 0.95rem; color: var(--primary-deep); }
+        .logo-title { font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.4px; }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            position: relative;
+            padding-bottom: 3px;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 0; height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover { color: var(--primary-dark); }
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-cta {
+            background: var(--primary) !important;
+            color: var(--white) !important;
+            padding: 0.5rem 1.3rem;
+            border-radius: 50px;
+            font-size: 0.85rem !important;
+            transition: background 0.3s ease !important;
+        }
+        .nav-cta:hover { background: var(--primary-dark) !important; }
+        .nav-cta::after { display: none !important; }
+
+        /* ── HERO ────────────────────────────────────────── */
+        .hero {
+            background: var(--primary-deep);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 9rem 8% 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40%; right: -15%;
+            width: 750px; height: 750px;
+            background: radial-gradient(circle, rgba(74,124,89,0.22) 0%, transparent 68%);
+            pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -25%; left: -8%;
+            width: 520px; height: 520px;
+            background: radial-gradient(circle, rgba(184,121,26,0.1) 0%, transparent 68%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 760px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--accent);
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .hero-eyebrow::before {
+            content: '';
+            display: block;
+            width: 28px; height: 2px;
+            background: var(--accent);
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 5.5vw, 4.4rem);
+            font-weight: 900;
+            color: var(--off-white);
+            line-height: 1.13;
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: #7fc499;
+        }
+        .hero-desc {
+            font-size: 1.1rem;
+            color: rgba(240,236,228,0.7);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-bottom: 3rem;
+        }
+        .badge {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.14);
+            color: rgba(240,236,228,0.85);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            backdrop-filter: blur(6px);
+        }
+        .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 1.9rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            letter-spacing: 0.3px;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+            box-shadow: 0 4px 22px rgba(184,121,26,0.38);
+        }
+        .btn-primary:hover {
+            background: #9e6816;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(184,121,26,0.48);
+        }
+        .btn-ghost {
+            border: 1.5px solid rgba(255,255,255,0.3);
+            color: rgba(240,236,228,0.88);
+        }
+        .btn-ghost:hover {
+            border-color: rgba(255,255,255,0.65);
+            color: var(--off-white);
+            transform: translateY(-3px);
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 2.5rem; left: 8%;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: rgba(240,236,228,0.35);
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .scroll-line { width: 36px; height: 1px; background: rgba(240,236,228,0.25); }
+
+        /* ── STATS BAR ───────────────────────────────────── */
+        .stats-bar { background: var(--primary); }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .stat-item {
+            padding: 2.8rem 2rem;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.1);
+        }
+        .stat-item:last-child { border-right: none; }
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--off-white);
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+        .stat-label {
+            font-size: 0.75rem;
+            color: rgba(240,236,228,0.55);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        /* ── SOBRE ───────────────────────────────────────── */
+        #sobre {
+            padding: 8rem 8%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+        .label-tag {
+            display: inline-block;
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        .sobre-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--primary-deep);
+            line-height: 1.25;
+            margin-bottom: 1.5rem;
+        }
+        .sobre-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.1rem;
+            font-size: 1rem;
+        }
+        .sobre-text strong { color: var(--primary-dark); }
+
+        .sobre-highlights { display: flex; flex-direction: column; gap: 1.25rem; }
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.4rem 1.5rem;
+            background: var(--light);
+            border-radius: 14px;
+            border-left: 3px solid var(--primary);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .highlight-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 6px 24px rgba(74,124,89,0.1);
+        }
+        .highlight-icon {
+            width: 44px; height: 44px;
+            background: var(--primary-light);
+            border-radius: 11px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--primary);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        .highlight-text h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.2rem;
+        }
+        .highlight-text p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
+
+        /* ── EXPERTISE ───────────────────────────────────── */
+        #expertise {
+            padding: 8rem 8%;
+            background: var(--primary-deep);
+        }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+        }
+        .section-sub {
+            font-size: 1rem;
+            margin-top: 0.75rem;
+            font-weight: 300;
+        }
+        #expertise .section-header h2 { color: var(--off-white); }
+        #expertise .section-sub { color: rgba(240,236,228,0.5); }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .expertise-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.09);
+            padding: 2.5rem 2rem;
+            border-radius: 18px;
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .expertise-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.35s ease;
+        }
+        .expertise-card:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-8px);
+            box-shadow: 0 24px 48px rgba(0,0,0,0.3);
+        }
+        .expertise-card:hover::before { transform: scaleX(1); }
+        .card-icon {
+            width: 58px; height: 58px;
+            background: rgba(74,124,89,0.18);
+            border-radius: 15px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem;
+            color: #7fc499;
+            margin-bottom: 1.5rem;
+        }
+        .expertise-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: var(--off-white);
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+        .expertise-card p {
+            font-size: 0.9rem;
+            color: rgba(240,236,228,0.5);
+            line-height: 1.75;
+        }
+
+        /* ── PUBLICAÇÕES ─────────────────────────────────── */
+        #publicacoes {
+            padding: 8rem 8%;
+            background: var(--white);
+        }
+        #publicacoes .section-header { text-align: left; }
+        #publicacoes .section-header h2 { color: var(--primary-deep); }
+        #publicacoes .section-sub { color: var(--text-muted); }
+
+        .pub-grid { display: grid; gap: 1.5rem; max-width: 960px; margin-top: 1rem; }
+        .pub-card {
+            display: grid;
+            grid-template-columns: 56px 1fr;
+            gap: 1.75rem;
+            padding: 2.2rem 2rem;
+            border: 1px solid rgba(74,124,89,0.14);
+            border-radius: 18px;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+        .pub-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 14px 40px rgba(74,124,89,0.11);
+            transform: translateY(-4px);
+        }
+        .pub-year {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--accent);
+            text-transform: uppercase;
+            align-self: center;
+            opacity: 0.85;
+        }
+        .pub-journal {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.5rem;
+        }
+        .pub-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--dark);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.65rem;
+            line-height: 1.4;
+            transition: color 0.2s ease;
+        }
+        .pub-title:hover { color: var(--primary); }
+        .pub-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1.1rem;
+            line-height: 1.7;
+        }
+        .pub-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+            transition: gap 0.2s ease;
+        }
+        .pub-link:hover { gap: 0.8rem; }
+
+        /* ── FOOTER ──────────────────────────────────────── */
+        footer {
+            background: var(--primary-deep);
+            padding: 6rem 8% 3rem;
+        }
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 5rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            margin-bottom: 3rem;
+        }
+        .footer-brand h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.65rem;
+            color: var(--off-white);
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+        .footer-brand .subtitle {
+            color: rgba(240,236,228,0.45);
+            font-size: 0.88rem;
+            margin-bottom: 1.5rem;
+        }
+        .footer-brand > p {
+            color: rgba(240,236,228,0.5);
+            font-size: 0.9rem;
+            max-width: 400px;
+            line-height: 1.75;
+            margin-bottom: 2rem;
+        }
+        .social-links { display: flex; gap: 0.75rem; }
+        .social-links a {
+            width: 42px; height: 42px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            color: rgba(240,236,228,0.65);
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .social-links a:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+        .footer-contact h4 {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            color: rgba(240,236,228,0.6);
+            font-size: 0.9rem;
+        }
+        .contact-item i { color: var(--primary); width: 16px; text-align: center; }
+        .contact-item a { color: inherit; text-decoration: none; transition: color 0.2s; }
+        .contact-item a:hover { color: var(--accent-light); }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-bottom p { font-size: 0.78rem; color: rgba(240,236,228,0.25); }
+
+        /* ── ANIMATIONS ──────────────────────────────────── */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        .pub-loading {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 3rem 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .pub-spinner {
+            width: 22px; height: 22px;
+            border: 2px solid var(--primary-light);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 0.75s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .pub-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
+        }
+        .filter-btn {
+            background: transparent;
+            border: 1.5px solid rgba(74,124,89,0.25);
+            color: var(--text-muted);
+            padding: 0.4rem 1.1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Inter', sans-serif;
+        }
+        .filter-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        .filter-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: var(--white);
+        }
+
+        .pub-card { display: none; }
+        .pub-card.visible { display: grid; }
+
+        .pub-tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.9rem;
+        }
+        .pub-tag {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            letter-spacing: 0.3px;
+        }
+
+        .pub-error {
+            color: var(--text-muted);
+            padding: 2rem 0;
+            font-size: 0.95rem;
+        }
+
+        /* ── RESPONSIVE ──────────────────────────────────── */
+        @media (max-width: 960px) {
+            #sobre { grid-template-columns: 1fr; gap: 3rem; }
+            .footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+            .stat-item:last-child { border-bottom: none; }
+        }
+        @media (max-width: 768px) {
+            nav { padding: 1rem 5%; }
+            .nav-links { display: none; }
+            .hero { padding: 7.5rem 5% 5rem; min-height: auto; }
+            #sobre, #expertise, #publicacoes { padding: 5rem 5%; }
+            footer { padding: 4rem 5% 2rem; }
+            .pub-card { grid-template-columns: 1fr; }
+            .pub-year { writing-mode: horizontal-tb; transform: none; }
+            .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ── NAVEGAÇÃO ─────────────────────────────────────── -->
+    <nav id="main-nav">
+        <a href="#" class="logo">
+            <div class="logo-monogram">CB</div>
+            <div class="logo-text">
+                <span class="logo-name">Caroline G. Birrer</span>
+                <span class="logo-title">Dra. · Ecóloga &amp; Pesquisadora</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#expertise">Expertise</a></li>
+            <li><a href="#publicacoes">Publicações</a></li>
+            <li><a href="#contato" class="nav-cta">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- ── HERO ──────────────────────────────────────────── -->
+    <!-- Renderizado via data/hero.json -->
+    <header class="hero" id="hero-section">
+        <div class="hero-content" id="hero-content"></div>
+        <div class="hero-scroll"><span class="scroll-line"></span> Rolar</div>
+    </header>
+
+    <!-- ── MÉTRICAS ───────────────────────────────────────── -->
+    <div class="stats-bar">
+        <div class="stats-grid" id="stats-grid"></div>
+    </div>
+
+    <!-- ── SOBRE ──────────────────────────────────────────── -->
+    <!-- Renderizado via data/sobre.json -->
+    <section id="sobre"></section>
+
+    <!-- ── EXPERTISE ──────────────────────────────────────── -->
+    <!-- Renderizado via data/areas.json -->
+    <section id="expertise"></section>
+
+    <!-- ── PUBLICAÇÕES ────────────────────────────────────── -->
+    <section id="publicacoes">
+        <div class="section-header fade-up">
+            <span class="label-tag">Produção Científica</span>
+            <h2>Trabalhos em Destaque</h2>
+            <p class="section-sub">Pesquisa publicada em periódicos de alto impacto e reconhecimento internacional.</p>
+        </div>
+
+        <!-- Filtros de tag -->
+        <div class="pub-filters fade-up" id="pub-filters" aria-label="Filtrar publicações"></div>
+
+        <!-- Cards renderizados via JS a partir de data/publications.json -->
+        <div class="pub-grid" id="pub-grid" aria-live="polite">
+            <div class="pub-loading" id="pub-loading">
+                <div class="pub-spinner"></div>
+                <span>Carregando publicações…</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER / CONTATO ───────────────────────────────── -->
+    <!-- Renderizado via data/contato.json -->
+    <footer id="contato"></footer>
+
+    <script>
+        // ── Utilitário de sanitização ─────────────────────────
+        function esc(str) {
+            return String(str ?? '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        // Permite apenas tags inline seguras nos parágrafos do JSON
+        // (strong, em, a com href relativo/mailto)
+        function safeParagraph(html) {
+            const div = document.createElement('div');
+            div.innerHTML = html;
+            div.querySelectorAll('*').forEach(el => {
+                const allowed = ['strong','em','a','span'];
+                if (!allowed.includes(el.tagName.toLowerCase())) {
+                    el.replaceWith(document.createTextNode(el.textContent));
+                }
+                if (el.tagName.toLowerCase() === 'a') {
+                    const href = el.getAttribute('href') || '';
+                    if (!/^(https?:|mailto:|#)/.test(href)) el.removeAttribute('href');
+                    el.setAttribute('rel', 'noopener');
+                }
+                [...el.attributes].forEach(attr => {
+                    if (!['href','rel','title','class'].includes(attr.name)) el.removeAttribute(attr.name);
+                });
+            });
+            return div.innerHTML;
+        }
+
+        // ── Nav shrink on scroll ──────────────────────────────
+        const nav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // ── IntersectionObserver (fade-up) ────────────────────
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.12 });
+        function observe(el) { observer.observe(el); }
+
+        // ── Loader genérico ───────────────────────────────────
+        async function loadJSON(path) {
+            const res = await fetch(path);
+            if (!res.ok) throw new Error(`HTTP ${res.status} — ${path}`);
+            return res.json();
+        }
+
+        // ── HERO ──────────────────────────────────────────────
+        // Fonte: data/hero.json
+        loadJSON('data/hero.json').then(d => {
+            const badgesHtml = d.badges.map(b =>
+                `<span class="badge"><i class="${esc(b.icon)}"></i>&nbsp; ${esc(b.text)}</span>`
+            ).join('');
+
+            const ctaHtml = d.cta.map(c =>
+                `<a href="${esc(c.href)}" class="btn ${esc(c.style)}"
+                    ${c.external ? 'target="_blank" rel="noopener"' : ''}>
+                    <i class="${esc(c.icon)}"></i> ${esc(c.label)}
+                </a>`
+            ).join('');
+
+            document.getElementById('hero-content').innerHTML = `
+                <div class="hero-eyebrow">${esc(d.eyebrow)}</div>
+                <h1>${esc(d.headline)} <em>${esc(d.headline_em)}</em><br>${esc(d.headline_suffix)}</h1>
+                <p class="hero-desc">${esc(d.description)}</p>
+                <div class="hero-badges">${badgesHtml}</div>
+                <div class="hero-cta">${ctaHtml}</div>`;
+
+            const statsGrid = document.getElementById('stats-grid');
+            d.stats.forEach((s, i) => {
+                const el = document.createElement('div');
+                el.className = 'stat-item fade-up';
+                el.style.transitionDelay = `${i * 0.1}s`;
+                el.innerHTML = `<span class="stat-number">${esc(s.number)}</span>
+                                <span class="stat-label">${esc(s.label)}</span>`;
+                statsGrid.appendChild(el);
+                observe(el);
+            });
+        }).catch(console.error);
+
+        // ── SOBRE ─────────────────────────────────────────────
+        // Fonte: data/sobre.json
+        loadJSON('data/sobre.json').then(d => {
+            const parasHtml = d.paragraphs.map(p => `<p>${safeParagraph(p)}</p>`).join('');
+
+            const highlightsHtml = d.highlights.map(h => `
+                <div class="highlight-item">
+                    <div class="highlight-icon"><i class="${esc(h.icon)}"></i></div>
+                    <div class="highlight-text">
+                        <h4>${esc(h.title)}</h4>
+                        <p>${esc(h.description)}</p>
+                    </div>
+                </div>`).join('');
+
+            const sobre = document.getElementById('sobre');
+            sobre.innerHTML = `
+                <div class="sobre-text fade-up">
+                    <span class="label-tag">${esc(d.label)}</span>
+                    <h2>${esc(d.title)}</h2>
+                    ${parasHtml}
+                </div>
+                <div class="sobre-highlights fade-up" style="transition-delay:.15s">
+                    ${highlightsHtml}
+                </div>`;
+            sobre.querySelectorAll('.fade-up').forEach(observe);
+        }).catch(console.error);
+
+        // ── ÁREAS ─────────────────────────────────────────────
+        // Fonte: data/areas.json
+        loadJSON('data/areas.json').then(d => {
+            const cardsHtml = d.areas.map((a, i) => `
+                <div class="expertise-card fade-up" style="transition-delay:${i * 0.1}s">
+                    <div class="card-icon"><i class="${esc(a.icon)}"></i></div>
+                    <h3>${esc(a.title)}</h3>
+                    <p>${esc(a.description)}</p>
+                </div>`).join('');
+
+            const expertise = document.getElementById('expertise');
+            expertise.innerHTML = `
+                <div class="section-header fade-up">
+                    <span class="label-tag">${esc(d.label)}</span>
+                    <h2>${esc(d.title)}</h2>
+                    <p class="section-sub">${esc(d.subtitle)}</p>
+                </div>
+                <div class="expertise-grid">${cardsHtml}</div>`;
+            expertise.querySelectorAll('.fade-up').forEach(observe);
+        }).catch(console.error);
+
+        // ── CONTATO / FOOTER ──────────────────────────────────
+        // Fonte: data/contato.json
+        loadJSON('data/contato.json').then(d => {
+            const socialHtml = d.social.map(s =>
+                `<a href="${esc(s.href)}" title="${esc(s.title)}"><i class="${esc(s.icon)}"></i></a>`
+            ).join('');
+
+            const contactHtml = d.contact_items.map(c => {
+                let inner;
+                if (c.type === 'email') {
+                    inner = `<a href="mailto:${esc(c.value)}">${esc(c.label)}</a>`;
+                } else if (c.type === 'link') {
+                    inner = `<a href="${esc(c.value)}" target="_blank" rel="noopener">${esc(c.label)}</a>`;
+                } else {
+                    inner = `<span>${esc(c.label)}</span>`;
+                }
+                return `<div class="contact-item"><i class="${esc(c.icon)}"></i>${inner}</div>`;
+            }).join('');
+
+            document.getElementById('contato').innerHTML = `
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <h3>${esc(d.name)}</h3>
+                        <p class="subtitle">${esc(d.subtitle)}</p>
+                        <p>${esc(d.availability)}</p>
+                        <div class="social-links">${socialHtml}</div>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contato &amp; Links</h4>
+                        ${contactHtml}
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>${esc(d.footer_copy)}</p>
+                    <p>${esc(d.footer_sub)}</p>
+                </div>`;
+        }).catch(console.error);
+
+        // ── PUBLICAÇÕES ───────────────────────────────────────
+        // Fonte: data/publications.json
+        (async function loadPublications() {
+            const grid    = document.getElementById('pub-grid');
+            const loading = document.getElementById('pub-loading');
+            const filters = document.getElementById('pub-filters');
+
+            let publications = [];
+            try {
+                publications = await loadJSON('data/publications.json');
+            } catch {
+                loading.outerHTML = `<p class="pub-error">
+                    <i class="fas fa-exclamation-circle"></i>
+                    Não foi possível carregar as publicações. Verifique <code>data/publications.json</code>.
+                </p>`;
+                return;
+            }
+
+            publications.sort((a, b) => parseInt(b.year) - parseInt(a.year));
+
+            const allTags = ['Todas', ...new Set(publications.flatMap(p => p.tags || []))];
+            allTags.forEach((tag, i) => {
+                const btn = document.createElement('button');
+                btn.className = 'filter-btn' + (i === 0 ? ' active' : '');
+                btn.textContent = tag;
+                btn.dataset.tag = tag;
+                btn.addEventListener('click', () => applyFilter(tag));
+                filters.appendChild(btn);
+            });
+
+            loading.remove();
+            publications.forEach((pub, index) => {
+                const card = document.createElement('div');
+                card.className = 'pub-card visible fade-up';
+                card.style.transitionDelay = `${index * 0.1}s`;
+                card.dataset.tags = JSON.stringify(pub.tags || []);
+
+                const tagsHtml = (pub.tags || [])
+                    .map(t => `<span class="pub-tag">${esc(t)}</span>`).join('');
+                const linkLabel = pub.type === 'Tese de Doutorado' ? 'Acessar documento' : 'Acessar publicação';
+
+                card.innerHTML = `
+                    <span class="pub-year">${esc(pub.year)}</span>
+                    <div class="pub-content">
+                        <div class="pub-journal">${esc(pub.journal)} · ${esc(pub.type)}</div>
+                        <a href="publication.html?id=${esc(pub.id)}" class="pub-title">
+                            ${esc(pub.title)}
+                        </a>
+                        <p class="pub-desc">${esc(pub.description)}</p>
+                        <div class="pub-tag-list">${tagsHtml}</div>
+                        <a href="publication.html?id=${esc(pub.id)}" class="pub-link">
+                            ${linkLabel} <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>`;
+
+                grid.appendChild(card);
+                observe(card);
+            });
+
+            function applyFilter(tag) {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.toggle('active', b.dataset.tag === tag);
+                });
+                document.querySelectorAll('.pub-card').forEach(card => {
+                    const cardTags = JSON.parse(card.dataset.tags);
+                    card.classList.toggle('visible', tag === 'Todas' || cardTags.includes(tag));
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "Dra. Caroline Gonçalves Birrer",
+  "subtitle": "Ecóloga · Pesquisadora · Doutora em Biologia pela UFBA",
+  "availability": "Disponível para colaborações científicas, orientações, palestras e consultorias em conservação e biogeografia neotropical.",
+  "social": [
+    { "platform": "LinkedIn",     "href": "#",                         "icon": "fab fa-linkedin-in",  "title": "LinkedIn" },
+    { "platform": "ResearchGate", "href": "#",                         "icon": "fab fa-researchgate", "title": "ResearchGate" },
+    { "platform": "ORCID",        "href": "#",                         "icon": "fab fa-orcid",        "title": "ORCID" },
+    { "platform": "E-mail",       "href": "mailto:exemplo@email.com",  "icon": "fas fa-envelope",     "title": "E-mail" }
+  ],
+  "contact_items": [
+    { "icon": "fas fa-envelope",       "type": "email",  "value": "exemplo@ufba.br",          "label": "exemplo@ufba.br" },
+    { "icon": "fas fa-map-marker-alt", "type": "text",   "value": "Salvador, Bahia — Brasil", "label": "Salvador, Bahia — Brasil" },
+    { "icon": "fas fa-university",     "type": "text",   "value": "Universidade Federal da Bahia", "label": "Universidade Federal da Bahia" },
+    { "icon": "fas fa-link",           "type": "link",   "value": "http://lattes.cnpq.br/",   "label": "Currículo Lattes CNPq" }
+  ],
+  "footer_copy": "© 2026 · Dra. Caroline Gonçalves Birrer · Todos os direitos reservados.",
+  "footer_sub": "Portfólio Científico & Acadêmico"
+}

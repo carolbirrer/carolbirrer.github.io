@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicação | Dra. Caroline G. Birrer</title>
+    <meta name="description" content="Detalhe de publicação científica — Dra. Caroline Gonçalves Birrer">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+
+    <style>
+        :root {
+            --primary:       #4a7c59;
+            --primary-dark:  #2a5239;
+            --primary-deep:  #1a3528;
+            --accent:        #b8791a;
+            --accent-light:  #f2e6cc;
+            --primary-light: #e6f0ea;
+            --light:         #f4f7f5;
+            --dark:          #1c2820;
+            --text-muted:    #5c6e63;
+            --white:         #ffffff;
+            --off-white:     #f0ece4;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background: var(--white);
+        }
+
+        /* ── NAV ────────────────────────────────────────────── */
+        nav {
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1.2rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(74,124,89,0.12);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+        .logo-monogram {
+            width: 40px; height: 40px;
+            background: var(--primary-deep);
+            color: var(--off-white);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            flex-shrink: 0;
+        }
+        .logo-text { display: flex; flex-direction: column; line-height: 1.2; }
+        .logo-name  { font-weight: 600; font-size: 0.95rem; color: var(--primary-deep); }
+        .logo-title { font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.4px; }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .back-link:hover { color: var(--primary); }
+
+        /* ── LOADING / ERROR ────────────────────────────────── */
+        .state-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+            gap: 1.2rem;
+            color: var(--text-muted);
+            padding: 4rem 8%;
+            text-align: center;
+        }
+        .spinner {
+            width: 36px; height: 36px;
+            border: 3px solid var(--primary-light);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .state-center h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+        .state-center a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .state-center a:hover { text-decoration: underline; }
+
+        /* ── ARTIGO HERO ────────────────────────────────────── */
+        .pub-hero {
+            background: var(--primary-deep);
+            padding: 6rem 8% 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .pub-hero::before {
+            content: '';
+            position: absolute;
+            top: -30%; right: -10%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(74,124,89,0.18) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .pub-hero-inner { position: relative; z-index: 1; max-width: 860px; }
+
+        .pub-meta-top {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.8rem;
+        }
+        .pub-type-badge {
+            background: rgba(184,121,26,0.18);
+            border: 1px solid rgba(184,121,26,0.35);
+            color: #e8a84a;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 0.35rem 0.9rem;
+            border-radius: 50px;
+        }
+        .pub-year-badge {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.14);
+            color: rgba(240,236,228,0.65);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            padding: 0.35rem 0.9rem;
+            border-radius: 50px;
+        }
+
+        .pub-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.9rem, 4vw, 3rem);
+            font-weight: 900;
+            color: var(--off-white);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .pub-authors {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: rgba(240,236,228,0.55);
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+        .pub-authors i { color: var(--primary); }
+        .pub-authors span { color: rgba(240,236,228,0.8); font-weight: 500; }
+
+        .pub-journal-line {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: rgba(240,236,228,0.45);
+            font-size: 0.88rem;
+        }
+        .pub-journal-line i { color: var(--primary); }
+        .pub-journal-line strong { color: rgba(240,236,228,0.75); }
+
+        /* ── ACTIONS BAR ────────────────────────────────────── */
+        .pub-actions {
+            background: var(--light);
+            padding: 1.5rem 8%;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            border-bottom: 1px solid rgba(74,124,89,0.12);
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.88rem;
+            transition: all 0.25s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+        .btn-primary { background: var(--accent); color: var(--white); }
+        .btn-primary:hover { background: #9e6816; transform: translateY(-2px); }
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid rgba(74,124,89,0.3);
+            color: var(--primary-dark);
+        }
+        .btn-outline:hover {
+            border-color: var(--primary);
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+        .btn-disabled {
+            background: transparent;
+            border: 1.5px solid rgba(0,0,0,0.1);
+            color: var(--text-muted);
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        /* ── CONTEÚDO PRINCIPAL ─────────────────────────────── */
+        .pub-body {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 4rem;
+            padding: 5rem 8%;
+            align-items: start;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        /* Coluna esquerda */
+        .pub-main .section-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .pub-main h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-deep);
+            margin-bottom: 1.25rem;
+        }
+        .pub-abstract {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.85;
+            margin-bottom: 3.5rem;
+        }
+
+        /* ── Markdown body ─────────────────────────────────── */
+        .pub-md-loading {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            padding: 1.5rem 0 3rem;
+        }
+        .pub-md-loading .mini-spin {
+            width: 18px; height: 18px;
+            border: 2px solid var(--primary-light);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 0.75s linear infinite;
+            flex-shrink: 0;
+        }
+
+        .md-body {
+            font-size: 1rem;
+            line-height: 1.85;
+            color: var(--dark);
+            margin-bottom: 3.5rem;
+        }
+        .md-body h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            font-weight: 900;
+            color: var(--primary-deep);
+            margin: 2.5rem 0 1rem;
+            line-height: 1.2;
+        }
+        .md-body h1:first-child { margin-top: 0; }
+        .md-body h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-deep);
+            margin: 2.5rem 0 0.9rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-light);
+        }
+        .md-body h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin: 2rem 0 0.7rem;
+        }
+        .md-body p {
+            color: var(--text-muted);
+            margin-bottom: 1.1rem;
+        }
+        .md-body strong { color: var(--dark); font-weight: 600; }
+        .md-body em { font-style: italic; }
+        .md-body a { color: var(--accent); text-decoration: none; }
+        .md-body a:hover { text-decoration: underline; }
+        .md-body hr {
+            border: none;
+            border-top: 1px solid var(--primary-light);
+            margin: 2.5rem 0;
+        }
+        .md-body blockquote {
+            border-left: 3px solid var(--accent);
+            background: var(--accent-light);
+            padding: 1.1rem 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.5rem 0;
+        }
+        .md-body blockquote p {
+            color: var(--primary-deep);
+            font-style: italic;
+            font-size: 1.05rem;
+            margin: 0;
+        }
+        .md-body ul, .md-body ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1.1rem;
+            color: var(--text-muted);
+        }
+        .md-body li { margin-bottom: 0.4rem; }
+        .md-body li strong { color: var(--dark); }
+        .md-body table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.92rem;
+        }
+        .md-body thead tr { background: var(--primary-deep); }
+        .md-body thead th {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            color: var(--off-white);
+            font-weight: 600;
+            font-size: 0.78rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .md-body tbody tr { border-bottom: 1px solid var(--primary-light); }
+        .md-body tbody tr:last-child { border-bottom: none; }
+        .md-body tbody td {
+            padding: 0.75rem 1rem;
+            color: var(--text-muted);
+        }
+        .md-body code {
+            background: var(--light);
+            border: 1px solid rgba(74,124,89,0.15);
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            color: var(--primary-dark);
+        }
+        .md-body pre {
+            background: var(--primary-deep);
+            border-radius: 12px;
+            padding: 1.5rem;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        .md-body pre code {
+            background: none;
+            border: none;
+            padding: 0;
+            color: #a8d5b5;
+            font-size: 0.88rem;
+        }
+        .md-body img {
+            max-width: 100%;
+            border-radius: 12px;
+            margin: 1.5rem 0 0.5rem;
+            display: block;
+        }
+        .md-body img + em {
+            display: block;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .pub-tags-section { margin-bottom: 3.5rem; }
+        .pub-tags-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .pub-tag-item {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            letter-spacing: 0.3px;
+        }
+
+        .pub-citation-box {
+            background: var(--light);
+            border-left: 3px solid var(--primary);
+            border-radius: 0 12px 12px 0;
+            padding: 1.5rem 1.75rem;
+        }
+        .pub-citation-box p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.75;
+            font-style: italic;
+        }
+        .copy-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 1rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--primary);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            padding: 0;
+            transition: color 0.2s ease;
+        }
+        .copy-btn:hover { color: var(--accent); }
+        .copy-btn.copied { color: var(--primary-dark); }
+
+        /* Coluna direita (sidebar) */
+        .pub-sidebar { position: sticky; top: 100px; }
+
+        .sidebar-card {
+            background: var(--white);
+            border: 1px solid rgba(74,124,89,0.14);
+            border-radius: 18px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        .sidebar-card h4 {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.25rem;
+        }
+        .detail-row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.85rem 0;
+            border-bottom: 1px solid var(--light);
+        }
+        .detail-row:last-child { border-bottom: none; padding-bottom: 0; }
+        .detail-row:first-of-type { padding-top: 0; }
+        .detail-key {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .detail-val {
+            font-size: 0.9rem;
+            color: var(--dark);
+            font-weight: 500;
+            line-height: 1.5;
+        }
+        .detail-val a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .detail-val a:hover { text-decoration: underline; }
+        .detail-val.muted { color: var(--text-muted); font-style: italic; }
+
+        /* ── OUTROS TRABALHOS ───────────────────────────────── */
+        .pub-more {
+            background: var(--primary-deep);
+            padding: 5rem 8%;
+        }
+        .pub-more-header {
+            margin-bottom: 2.5rem;
+        }
+        .pub-more-header .label-tag {
+            display: inline-block;
+            color: var(--accent);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+        .pub-more-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--off-white);
+            font-weight: 700;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+        .related-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 16px;
+            padding: 1.75rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        .related-card:hover {
+            background: rgba(255,255,255,0.09);
+            transform: translateY(-5px);
+            border-color: rgba(255,255,255,0.18);
+        }
+        .related-journal {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+        }
+        .related-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--off-white);
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+        .related-year {
+            font-size: 0.78rem;
+            color: rgba(240,236,228,0.35);
+        }
+
+        /* ── FOOTER ─────────────────────────────────────────── */
+        footer {
+            background: var(--primary-deep);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 2rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        footer p { font-size: 0.78rem; color: rgba(240,236,228,0.25); }
+        footer a {
+            font-size: 0.82rem;
+            color: rgba(240,236,228,0.45);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: color 0.2s ease;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* ── RESPONSIVE ─────────────────────────────────────── */
+        @media (max-width: 960px) {
+            .pub-body {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                padding: 3.5rem 5%;
+            }
+            .pub-sidebar { position: static; }
+        }
+        @media (max-width: 768px) {
+            nav { padding: 1rem 5%; }
+            .pub-hero { padding: 5rem 5% 3.5rem; }
+            .pub-actions { padding: 1.25rem 5%; }
+            .pub-more { padding: 4rem 5%; }
+            footer { padding: 1.75rem 5%; flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ── NAVEGAÇÃO ─────────────────────────────────────── -->
+    <nav>
+        <a href="index.html" class="logo">
+            <div class="logo-monogram">CB</div>
+            <div class="logo-text">
+                <span class="logo-name">Caroline G. Birrer</span>
+                <span class="logo-title">Dra. · Ecóloga &amp; Pesquisadora</span>
+            </div>
+        </a>
+        <a href="index.html#publicacoes" class="back-link">
+            <i class="fas fa-arrow-left"></i> Publicações
+        </a>
+    </nav>
+
+    <!-- ── CONTEÚDO DINÂMICO ─────────────────────────────── -->
+    <div id="pub-root">
+        <!-- Renderizado via JS -->
+        <div class="state-center" id="loading-state">
+            <div class="spinner"></div>
+            <p>Carregando publicação…</p>
+        </div>
+    </div>
+
+    <script>
+        // ── Utilitários ───────────────────────────────────────
+        function esc(str) {
+            return String(str ?? '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        function copyToClipboard(text, btn) {
+            navigator.clipboard.writeText(text).then(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Copiado!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fas fa-copy"></i> Copiar citação';
+                    btn.classList.remove('copied');
+                }, 2500);
+            });
+        }
+
+        // ── Lê ?id= da URL ────────────────────────────────────
+        const params = new URLSearchParams(window.location.search);
+        const pubId  = params.get('id');
+        const root   = document.getElementById('pub-root');
+
+        function renderError(title, message, showBack = true) {
+            root.innerHTML = `
+                <div class="state-center">
+                    <i class="fas fa-file-circle-exclamation" style="font-size:2.5rem;color:var(--text-muted)"></i>
+                    <h3>${esc(title)}</h3>
+                    <p>${message}</p>
+                    ${showBack ? '<a href="index.html#publicacoes"><i class="fas fa-arrow-left"></i> Voltar às publicações</a>' : ''}
+                </div>`;
+        }
+
+        if (!pubId) {
+            renderError('Publicação não encontrada', 'Nenhum <code>id</code> foi informado na URL.');
+        } else {
+            fetch('data/publications.json')
+                .then(res => {
+                    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                    return res.json();
+                })
+                .then(publications => {
+                    const pub = publications.find(p => p.id === pubId);
+                    if (!pub) {
+                        renderError(
+                            'Publicação não encontrada',
+                            `Não há registro com o id <code>${esc(pubId)}</code>.`
+                        );
+                        return;
+                    }
+
+                    // Atualiza title e meta da página
+                    document.title = `${pub.title} | Dra. Caroline G. Birrer`;
+                    document.querySelector('meta[name="description"]')
+                        .setAttribute('content', pub.description);
+
+                    // Outros trabalhos (exclui o atual)
+                    const others = publications.filter(p => p.id !== pub.id);
+
+                    // Monta HTML dos campos opcionais da sidebar
+                    const doiRow = pub.doi
+                        ? `<div class="detail-row">
+                               <span class="detail-key">DOI</span>
+                               <span class="detail-val">
+                                   <a href="https://doi.org/${esc(pub.doi)}" target="_blank" rel="noopener">
+                                       ${esc(pub.doi)}
+                                   </a>
+                               </span>
+                           </div>`
+                        : '';
+
+                    const volumeRow = pub.volume
+                        ? `<div class="detail-row">
+                               <span class="detail-key">Volume / Edição</span>
+                               <span class="detail-val">${esc(pub.volume)}</span>
+                           </div>`
+                        : '';
+
+                    const pagesRow = pub.pages
+                        ? `<div class="detail-row">
+                               <span class="detail-key">Páginas</span>
+                               <span class="detail-val">${esc(pub.pages)}</span>
+                           </div>`
+                        : '';
+
+                    const externalLink = pub.url && pub.url !== '#'
+                        ? `<a href="${esc(pub.url)}" target="_blank" rel="noopener" class="btn btn-primary">
+                               <i class="fas fa-external-link-alt"></i> Acessar publicação
+                           </a>`
+                        : `<button class="btn btn-disabled" disabled title="Link não disponível">
+                               <i class="fas fa-link-slash"></i> Link indisponível
+                           </button>`;
+
+                    const pdfLink = pub.pdf_url
+                        ? `<a href="${esc(pub.pdf_url)}" target="_blank" rel="noopener" class="btn btn-outline">
+                               <i class="fas fa-file-pdf"></i> Baixar PDF
+                           </a>`
+                        : '';
+
+                    const tagsHtml = (pub.tags || [])
+                        .map(t => `<span class="pub-tag-item">${esc(t)}</span>`)
+                        .join('');
+
+                    const relatedHtml = others.map(p => `
+                        <a href="publication.html?id=${esc(p.id)}" class="related-card">
+                            <div class="related-journal">${esc(p.journal)} · ${esc(p.type)}</div>
+                            <div class="related-title">${esc(p.title)}</div>
+                            <div class="related-year">${esc(p.year)}</div>
+                        </a>`).join('');
+
+                    root.innerHTML = `
+                        <!-- HERO -->
+                        <section class="pub-hero">
+                            <div class="pub-hero-inner">
+                                <div class="pub-meta-top">
+                                    <span class="pub-type-badge">${esc(pub.type)}</span>
+                                    <span class="pub-year-badge">${esc(pub.year)}</span>
+                                </div>
+                                <h1>${esc(pub.title)}</h1>
+                                <div class="pub-authors">
+                                    <i class="fas fa-user-pen"></i>
+                                    ${(pub.authors || []).map(a => `<span>${esc(a)}</span>`).join('<span style="opacity:.3">·</span>')}
+                                </div>
+                                <div class="pub-journal-line">
+                                    <i class="fas fa-book"></i>
+                                    <strong>${esc(pub.journal)}</strong>
+                                    <span>—</span>
+                                    <span>${esc(pub.journal_full || pub.journal)}</span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- ACTIONS BAR -->
+                        <div class="pub-actions">
+                            ${externalLink}
+                            ${pdfLink}
+                            <a href="index.html#publicacoes" class="btn btn-outline">
+                                <i class="fas fa-arrow-left"></i> Todas as publicações
+                            </a>
+                        </div>
+
+                        <!-- BODY -->
+                        <div class="pub-body">
+                            <main class="pub-main">
+                                <div id="md-content">
+                                    <div class="pub-md-loading">
+                                        <div class="mini-spin"></div>
+                                        Carregando conteúdo…
+                                    </div>
+                                </div>
+
+                                <div class="pub-tags-section">
+                                    <span class="section-label">Palavras-chave</span>
+                                    <div class="pub-tags-list">${tagsHtml}</div>
+                                </div>
+
+                                <span class="section-label">Como citar</span>
+                                <div class="pub-citation-box">
+                                    <p id="citation-text">${esc(pub.citation || '')}</p>
+                                    <button class="copy-btn" id="copy-btn" onclick="copyToClipboard(document.getElementById('citation-text').innerText, this)">
+                                        <i class="fas fa-copy"></i> Copiar citação
+                                    </button>
+                                </div>
+                            </main>
+
+                            <aside class="pub-sidebar">
+                                <div class="sidebar-card">
+                                    <h4>Detalhes</h4>
+                                    <div class="detail-row">
+                                        <span class="detail-key">Ano</span>
+                                        <span class="detail-val">${esc(pub.year)}</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-key">Tipo</span>
+                                        <span class="detail-val">${esc(pub.type)}</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-key">Periódico / Instituição</span>
+                                        <span class="detail-val">${esc(pub.journal)}</span>
+                                    </div>
+                                    ${doiRow}
+                                    ${volumeRow}
+                                    ${pagesRow}
+                                </div>
+
+                                <div class="sidebar-card">
+                                    <h4>Autores</h4>
+                                    ${(pub.authors || []).map(a => `
+                                        <div class="detail-row">
+                                            <span class="detail-val"><i class="fas fa-user" style="color:var(--primary);margin-right:.5rem;font-size:.8rem"></i>${esc(a)}</span>
+                                        </div>`).join('')}
+                                </div>
+                            </aside>
+                        </div>
+
+                        <!-- OUTROS TRABALHOS -->
+                        ${others.length > 0 ? `
+                        <section class="pub-more">
+                            <div class="pub-more-header">
+                                <span class="label-tag">Mais trabalhos</span>
+                                <h2>Outras publicações</h2>
+                            </div>
+                            <div class="related-grid">${relatedHtml}</div>
+                        </section>` : ''}
+
+                        <!-- FOOTER -->
+                        <footer>
+                            <p>&copy; 2026 · Dra. Caroline Gonçalves Birrer</p>
+                            <a href="index.html">
+                                <i class="fas fa-home"></i> Voltar ao portfólio
+                            </a>
+                        </footer>`;
+
+                    // Busca e renderiza o markdown da publicação
+                    fetch(`content/${pub.id}.md`)
+                        .then(r => {
+                            if (!r.ok) throw new Error();
+                            return r.text();
+                        })
+                        .then(md => {
+                            // Remove o h1 do markdown (o título já está no hero)
+                            const body = md.replace(/^#\s+.+\n?/, '').trimStart();
+                            document.getElementById('md-content').innerHTML =
+                                `<div class="md-body">${marked.parse(body)}</div>`;
+                        })
+                        .catch(() => {
+                            // Fallback para o description do JSON
+                            document.getElementById('md-content').innerHTML =
+                                `<div class="md-body"><p>${esc(pub.description)}</p></div>`;
+                        });
+                })
+                .catch(() => {
+                    renderError(
+                        'Erro ao carregar dados',
+                        'Não foi possível acessar <code>data/publications.json</code>. Verifique se o servidor está rodando e o arquivo existe.',
+                        true
+                    );
+                });
+        }
+    </script>
+</body>
+</html>

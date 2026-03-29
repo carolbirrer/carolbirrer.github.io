@@ -1,0 +1,27 @@
+{
+  "label": "Áreas de Atuação",
+  "title": "Expertise multidisciplinar",
+  "subtitle": "Conectando ferramentas moleculares, espaciais e conceituais para ciência de impacto real.",
+  "areas": [
+    {
+      "icon": "fas fa-dna",
+      "title": "Filogeografia",
+      "description": "Distribuição geográfica de linhagens genéticas para desvendar processos evolutivos e históricos em carnívoros neotropicais."
+    },
+    {
+      "icon": "fas fa-map-marked-alt",
+      "title": "Modelagem Espacial",
+      "description": "Ferramentas computacionais em R e GIS para prever áreas de ocorrência, refúgios climáticos e corredores ecológicos."
+    },
+    {
+      "icon": "fas fa-leaf",
+      "title": "Conservação",
+      "description": "Planejamento estratégico para preservação de mamíferos aquáticos e ecossistemas estuarinos da América do Sul."
+    },
+    {
+      "icon": "fas fa-microscope",
+      "title": "Divulgação Científica",
+      "description": "Comunicação científica, advocacy e políticas com foco em diversidade, inclusão e financiamento da ciência no Brasil."
+    }
+  ]
+}

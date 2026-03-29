@@ -1,0 +1,33 @@
+{
+  "eyebrow": "Ecóloga · Pesquisadora · Doutora UFBA",
+  "headline": "Ciência que",
+  "headline_em": "transforma",
+  "headline_suffix": "a conservação",
+  "description": "Dra. Caroline Gonçalves Birrer une genética, filogeografia e modelagem espacial para revelar a história evolutiva dos carnívoros neotropicais — e construir estratégias reais de conservação.",
+  "badges": [
+    { "icon": "fas fa-graduation-cap", "text": "Doutora em Ecologia · UFBA" },
+    { "icon": "fas fa-microscope",     "text": "Lutrinae & Biogeografia Neotropical" },
+    { "icon": "fas fa-newspaper",      "text": "Publicações em Science & Mammal Review" }
+  ],
+  "cta": [
+    {
+      "label": "Ver Publicações",
+      "href": "#publicacoes",
+      "icon": "fas fa-book-open",
+      "style": "btn-primary",
+      "external": false
+    },
+    {
+      "label": "Currículo Lattes",
+      "href": "http://lattes.cnpq.br/",
+      "icon": "fas fa-external-link-alt",
+      "style": "btn-ghost",
+      "external": true
+    }
+  ],
+  "stats": [
+    { "number": "3+",  "label": "Publicações Científicas" },
+    { "number": "10+", "label": "Anos de Pesquisa" },
+    { "number": "2",   "label": "Espécies Estudadas" }
+  ]
+}
