@@ -590,6 +590,41 @@
         }
         footer a:hover { color: var(--accent); }
 
+        /* ── LANG SWITCHER ──────────────────────────────────── */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            margin-left: auto;
+        }
+        .lang-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.4rem 0.75rem;
+            border-radius: 50px;
+            border: 1.5px solid rgba(74,124,89,0.2);
+            background: transparent;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            letter-spacing: 0.5px;
+        }
+        .lang-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary-dark);
+            background: var(--primary-light);
+        }
+        .lang-btn.active {
+            background: var(--primary-deep);
+            border-color: var(--primary-deep);
+            color: var(--off-white);
+        }
+        .lang-btn .flag { font-size: 1rem; line-height: 1; }
+
         /* ── RESPONSIVE ─────────────────────────────────────── */
         @media (max-width: 960px) {
             .pub-body {
@@ -696,6 +731,21 @@
                     // Outros trabalhos (exclui o atual)
                     const others = publications.filter(p => p.id !== pub.id);
 
+                    // Idiomas disponíveis
+                    const hasMultipleLangs = pub.languages && pub.languages.length > 1;
+                    const langs = hasMultipleLangs ? pub.languages : null;
+                    let currentLang = pub.languages ? pub.languages[0] : null;
+
+                    const langSwitcherHtml = langs ? `
+                        <div class="lang-switcher" id="lang-switcher">
+                            ${langs.map(l => `
+                                <button class="lang-btn${l === currentLang ? ' active' : ''}" data-lang="${l}"
+                                        title="${l === 'pt-br' ? 'Português (Brasil)' : 'English'}">
+                                    <span class="flag">${l === 'pt-br' ? '🇧🇷' : '🇺🇸'}</span>
+                                    <span>${l === 'pt-br' ? 'PT' : 'EN'}</span>
+                                </button>`).join('')}
+                        </div>` : '';
+
                     // Monta HTML dos campos opcionais da sidebar
                     const doiRow = pub.doi
                         ? `<div class="detail-row">
@@ -776,6 +826,7 @@
                             <a href="index.html#publicacoes" class="btn btn-outline">
                                 <i class="fas fa-arrow-left"></i> Todas as publicações
                             </a>
+                            ${langSwitcherHtml}
                         </div>
 
                         <!-- BODY -->
@@ -850,23 +901,50 @@
                             </a>
                         </footer>`;
 
-                    // Busca e renderiza o markdown da publicação
-                    fetch(`content/${pub.id}.md`)
-                        .then(r => {
-                            if (!r.ok) throw new Error();
-                            return r.text();
-                        })
-                        .then(md => {
-                            // Remove o h1 do markdown (o título já está no hero)
-                            const body = md.replace(/^#\s+.+\n?/, '').trimStart();
-                            document.getElementById('md-content').innerHTML =
-                                `<div class="md-body">${marked.parse(body)}</div>`;
-                        })
-                        .catch(() => {
-                            // Fallback para o description do JSON
-                            document.getElementById('md-content').innerHTML =
-                                `<div class="md-body"><p>${esc(pub.description)}</p></div>`;
+                    // Função de carregamento de markdown com suporte a idiomas
+                    function loadMarkdown(lang) {
+                        const path = lang ? `content/${pub.id}-${lang}.md` : `content/${pub.id}.md`;
+                        const mdEl = document.getElementById('md-content');
+                        mdEl.innerHTML = '<div class="pub-md-loading"><div class="mini-spin"></div>Carregando conteúdo…</div>';
+                        fetch(path)
+                            .then(r => { if (!r.ok) throw new Error(); return r.text(); })
+                            .then(md => {
+                                const body = md.replace(/^#\s+.+\n?/, '').trimStart();
+                                mdEl.innerHTML = `<div class="md-body">${marked.parse(body)}</div>`;
+                            })
+                            .catch(() => {
+                                // Fallback: sem sufixo de idioma
+                                if (lang) {
+                                    fetch(`content/${pub.id}.md`)
+                                        .then(r => r.ok ? r.text() : Promise.reject())
+                                        .then(md => {
+                                            const body = md.replace(/^#\s+.+\n?/, '').trimStart();
+                                            mdEl.innerHTML = `<div class="md-body">${marked.parse(body)}</div>`;
+                                        })
+                                        .catch(() => {
+                                            mdEl.innerHTML = `<div class="md-body"><p>${esc(pub.description)}</p></div>`;
+                                        });
+                                } else {
+                                    mdEl.innerHTML = `<div class="md-body"><p>${esc(pub.description)}</p></div>`;
+                                }
+                            });
+                    }
+
+                    // Carrega conteúdo inicial (PT-BR por padrão)
+                    loadMarkdown(currentLang);
+
+                    // Configura botões de troca de idioma
+                    if (langs) {
+                        document.querySelectorAll('.lang-btn').forEach(btn => {
+                            btn.addEventListener('click', () => {
+                                currentLang = btn.dataset.lang;
+                                document.querySelectorAll('.lang-btn').forEach(b => {
+                                    b.classList.toggle('active', b.dataset.lang === currentLang);
+                                });
+                                loadMarkdown(currentLang);
+                            });
                         });
+                    }
                 })
                 .catch(() => {
                     renderError(
