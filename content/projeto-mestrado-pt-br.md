@@ -2,6 +2,23 @@
 
 > Integrando dados genéticos, ecológicos e espaciais para apoiar a tomada de decisão em conservação
 
+## Resumo
+
+**Priorização da Conservação com Dados Geoespaciais e Genéticos**
+
+Desenvolvi um fluxo de ciência de dados de ponta a ponta integrando registros de ocorrência de espécies, preditores ambientais e sequências genéticas georreferenciadas para otimizar o planejamento da conservação no Neotrópico.
+
+**Principais contribuições:**
+
+- Construção de modelos de distribuição de espécies para estimar adequação de habitat
+- Inferência de linhagens filogeográficas com base em dados de sequenciamento genético
+- Espacialização de padrões de biodiversidade em nível de linhagem
+- Comparação entre estratégias de priorização baseadas apenas em espécies vs informadas por linhagens
+- Geração de outputs espaciais de apoio à decisão para planejamento da conservação
+
+**Principal resultado:** A priorização da conservação baseada apenas nas distribuições das espécies capturou apenas parte do sinal da biodiversidade — a sobreposição entre as estratégias foi de apenas **45,56%**.
+
+
 ## Visão Geral do Projeto
 
 Este projeto aplicou ciência de dados, modelagem espacial e inferência biológica para identificar áreas prioritárias para conservação da biodiversidade no Neotrópico.
@@ -17,7 +34,7 @@ Para responder a isso, desenvolvi um fluxo analítico integrando:
 - inferência filogeográfica
 - algoritmos de priorização espacial
 
-O resultado foi uma estrutura de apoio à decisão para o planejamento da conservação, conectando modelagem ecológica e análise espacial orientada por dados.
+O resultado foi uma estrutura de apoio à decisão para o planejamento da conservação, conectando modelagem ecológica e análise espacial orientada por dados. Ainda desenvolvi uma soluçaõ em R para a análise genética e geográfica que não existia até então, otimizando o processo de análise e passando de 8 softwares diferentes para apenas um script em R.
 
 ## Por que este projeto importa
 
@@ -196,6 +213,16 @@ O projeto revelou uma estrutura genética intraespecífica substancial, mostrand
 
 Isso significa que tratar cada espécie como uma unidade homogênea esconderia variações biologicamente importantes.
 
+![''](/images/projeto-mestrado/Imagem1.jpg "Modelo de distribuição de espécies Lontra feline")
+*Figura 1: Modelos de Distribuição de Espécies para Lontra felina. Linhagem 1 (a); Linhagem 2 (b); e para a espécie como um todo (c).*
+
+![''](/images/projeto-mestrado/Imagem2.jpg "Modelo de distribuição de espécies Lontra longicaudis")
+*Figura 2: Modelos de Distribuição de Espécies para Lontra longicaudis. Linhagem 1 (a); Linhagem 2 (b); Linhagem 3 (c); e para a espécie como um todo (d).*
+
+
+![''](/images/projeto-mestrado/Imagem3.jpg "Modelo de distribuição de espécies Pteronura brasiliensis")
+*Figura 3: Modelos de Distribuição de Espécies para Pteronura brasiliensis. Linhagem 1 (a); Linhagem 2 (b); Linhagem 3 (c); Linhagem 4 (d); e para a espécie como um todo (e).*
+
 ### 2) Os modelos de distribuição de espécies apresentaram forte desempenho preditivo
 
 Os modelos de adequação de habitat mostraram desempenho robusto entre as espécies, sustentando seu uso como insumo espacial para a priorização posterior.
@@ -209,6 +236,14 @@ Esse foi o achado mais importante do projeto.
 Ao comparar os outputs de priorização baseada em espécies com priorização informada por linhagens, **a sobreposição espacial entre eles foi de apenas 45,56%.**
 
 **O que isso significa:** Proteger apenas a ocorrência das espécies não representaria adequadamente uma grande parcela da diversidade genética e evolutiva subjacente.
+
+![''](/images/projeto-mestrado/Imagem4.png "Priorização espacial")
+*Figura 4: Priorização espacial utilizando o Zonation, em que as áreas em vermelho representam os 17% mais essenciais para a priorização da: (a) diversidade de linhagens das Lutrinae neotropicais; (b) diversidade de espécies das Lutrinae neotropicais.*
+
+
+![''](/images/projeto-mestrado/Imagem5.jpg "Sobreposição das soluções espécies e linhagens")
+*Figura 5: Soma dos rasters das duas soluções do Zonation, espécies e linhagens. As áreas em verde-escuro representam regiões concordantes entre as análises; as áreas em verde-claro foram priorizadas apenas pela solução baseada em espécies; e as áreas em rosa foram priorizadas exclusivamente pela solução baseada em linhagens.*
+
 
 > A presença da espécie não é um proxy suficiente para a qualidade da conservação da biodiversidade.
 
@@ -255,22 +290,8 @@ Essa capacidade de ponta a ponta é um dos aspectos mais fortes do meu trabalho 
 - Comparação de cenários para apoio à decisão
 - Comunicação clara de resultados tecnicamente complexos
 
----
-
-## Resumo para Recrutadores
-
-**Priorização da Conservação com Dados Geoespaciais e Genéticos**
-
-Desenvolvi um fluxo de ciência de dados de ponta a ponta integrando registros de ocorrência de espécies, preditores ambientais e sequências genéticas georreferenciadas para otimizar o planejamento da conservação no Neotrópico.
-
-**Principais contribuições:**
-
-- Construção de modelos de distribuição de espécies para estimar adequação de habitat
-- Inferência de linhagens filogeográficas com base em dados de sequenciamento genético
-- Espacialização de padrões de biodiversidade em nível de linhagem
-- Comparação entre estratégias de priorização baseadas apenas em espécies vs informadas por linhagens
-- Geração de outputs espaciais de apoio à decisão para planejamento da conservação
-
-**Principal resultado:** A priorização da conservação baseada apenas nas distribuições das espécies capturou apenas parte do sinal da biodiversidade — a sobreposição entre as estratégias foi de apenas **45,56%**.
-
 **Tags:** Ciência de Dados · Análise Geoespacial · R · Modelagem Ecológica · Análise Bayesiana · Biodiversidade · Planejamento da Conservação · Priorização Espacial · Filogeografia
+
+
+
+

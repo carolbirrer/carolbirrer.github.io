@@ -2,6 +2,22 @@
 
 > Integrating genetic, ecological, and spatial data to support conservation decision-making
 
+## Summary
+
+**Conservation Prioritization Using Geospatial and Genetic Data**
+
+Developed an end-to-end data science workflow integrating species occurrence records, environmental predictors, and georeferenced genetic sequences to optimize conservation planning across the Neotropics.
+
+**Main contributions:**
+
+- Built species distribution models to estimate habitat suitability
+- Inferred phylogeographic lineages using genetic sequence data
+- Spatialized lineage-level biodiversity patterns
+- Compared species-only vs lineage-informed prioritization strategies
+- Generated spatial decision-support outputs for conservation planning
+
+**Main result:** Conservation prioritization based only on species distributions captured only part of the biodiversity signal — the overlap between strategies was only **45.56%**.
+
 ## Project Overview
 
 This project applied data science, spatial modeling, and biological inference to identify priority areas for biodiversity conservation across the Neotropics.
@@ -196,6 +212,16 @@ The project revealed substantial within-species genetic structure, showing that 
 
 This means that treating each species as a single homogeneous unit would hide biologically important variation.
 
+![''](/images/projeto-mestrado/Imagem1.jpg "Species Distribution Models for Lontra feline")
+*Figure 1: Species Distribution Models for Lontra felina. Lineage 1 (a); Lineage 2 (b); and the whole species (c).*
+
+![''](/images/projeto-mestrado/Imagem2.jpg "Species Distribution Models for Lontra longicaudis")
+*Figure 2: Species Distribution Models for Lontra longicaudis. Lineage 1 (a); Lineage 2 (b); Lineage 3 (c); and the whole species (d).*
+
+
+![''](/images/projeto-mestrado/Imagem3.jpg "Species Distribution Models for Pteronura brasiliensis")
+*Figure 3: Species Distribution Models for Pteronura brasiliensis. Lineage 1 (a); Lineage 2 (b); Lineage 3 (c); Lineage 4 (d); and the whole species (e).*
+
 ### 2) Species distribution models produced strong predictive performance
 
 The habitat suitability models showed robust performance across species, supporting their use as spatial inputs for downstream prioritization.
@@ -209,6 +235,13 @@ This was the most important finding of the project.
 When comparing the outputs of species-based prioritization with lineage-informed prioritization, **the spatial overlap between them was only 45.56%.**
 
 **What this means:** Protecting species occurrence alone would fail to adequately represent a large share of the underlying genetic and evolutionary diversity.
+
+![''](/images/projeto-mestrado/Imagem4.png "Spatial prioritization")
+*Figure 4: Zonation spatial prioritization, where red areas represent the 17% most essential regions for conserving: (a) lineage diversity of Neotropical otters; and (b) species diversity of Neotropical otters.*
+
+
+![''](/images/projeto-mestrado/Imagem5.jpg "Sum of both Zonation solutions")
+*Figure 5: Raster sum of both Zonation solutions, species and lineages. Dark green areas represent regions prioritized by both analyses; light green areas were prioritized only by the species-based solution; and pink areas were prioritized exclusively by the lineage-based solution.*
 
 > Species presence is not a sufficient proxy for biodiversity conservation quality.
 
@@ -255,22 +288,8 @@ That end-to-end capacity is one of the strongest aspects of my work as a data pr
 - Scenario comparison for decision support
 - Clear communication of technically complex results
 
----
-
-## Short Recruiter-Friendly Summary
-
-**Conservation Prioritization Using Geospatial and Genetic Data**
-
-Developed an end-to-end data science workflow integrating species occurrence records, environmental predictors, and georeferenced genetic sequences to optimize conservation planning across the Neotropics.
-
-**Main contributions:**
-
-- Built species distribution models to estimate habitat suitability
-- Inferred phylogeographic lineages using genetic sequence data
-- Spatialized lineage-level biodiversity patterns
-- Compared species-only vs lineage-informed prioritization strategies
-- Generated spatial decision-support outputs for conservation planning
-
-**Main result:** Conservation prioritization based only on species distributions captured only part of the biodiversity signal — the overlap between strategies was only **45.56%**.
-
 **Tags:** Data Science · Geospatial Analysis · R · Ecological Modeling · Bayesian Analysis · Biodiversity · Conservation Planning · Spatial Prioritization · Phylogeography
+
+
+
+

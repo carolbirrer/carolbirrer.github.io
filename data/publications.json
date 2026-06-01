@@ -1,7 +1,7 @@
 [
   {
     "id": "falha-metabolica",
-    "year": "2023",
+    "year": "2025",
     "journal": "UFBA",
     "journal_full": "Universidade Federal da Bahia — Programa de Pós-Graduação em Ecologia e Biomonitoramento",
     "type": "Capítulo de Tese",
@@ -14,14 +14,14 @@
     "pages": null,
     "pdf_url": null,
     "url": "#",
-    "citation": "Birrer, C. G. (2023). A Falha Metabólica na Agricultura Mundial. Universidade Federal da Bahia.",
+    "citation": "Birrer, C. G. (2025). Sustentabilidade em um mundo sob falha metabólica. Universidade Federal da Bahia.",
     "tags": ["Ciência de Dados", "R", "Sustentabilidade", "ESG", "Agritech", "Séries Temporais", "FAO", "Análise Global"],
     "highlight": true,
     "languages": ["pt-br", "en"]
   },
   {
     "id": "risco-foz-amazonas",
-    "year": "2023",
+    "year": "2025",
     "journal": "Projeto de Pesquisa",
     "journal_full": "Modelagem Espacial de Risco Socioambiental",
     "type": "Projeto de Análise",
@@ -33,14 +33,14 @@
     "pages": null,
     "pdf_url": null,
     "url": "#",
-    "citation": "Birrer, C. G. (2023). Modelagem Espacial de Risco Socioambiental: Foz do Amazonas.",
+    "citation": "Birrer, C. G. (2025). Entre a Conservação e a Exploração: Avaliação de Riscos da exploração de Petróleo na Foz do Amazonas",
     "tags": ["Python", "Análise Geoespacial", "Modelagem Probabilística", "QGIS", "Risk Analytics", "ESG", "Sustentabilidade"],
     "highlight": true,
     "languages": ["pt-br"]
   },
   {
     "id": "qualificacao-dados-aedas",
-    "year": "2024",
+    "year": "2025",
     "journal": "AEDAS",
     "journal_full": "AEDAS — Consultoria de Dados · Programa Médio Rio Doce",
     "type": "Consultoria",
@@ -52,14 +52,14 @@
     "pages": null,
     "pdf_url": null,
     "url": "#",
-    "citation": "Birrer, C. G. (2024). Qualificação e Validação de Base de Dados Socioeconômica. AEDAS.",
+    "citation": "Birrer, C. G. (2025). Qualificação e Validação de Base de Dados Socioeconômica. AEDAS.",
     "tags": ["Python", "Data Quality", "Data Wrangling", "Dados Relacionais", "Engenharia de Dados", "Consultoria"],
     "highlight": false,
     "languages": ["pt-br"]
   },
   {
-    "id": "portifolio",
-    "year": "2023",
+    "id": "projeto-mestrado",
+    "year": "2020",
     "journal": "UFBA",
     "journal_full": "Universidade Federal da Bahia — Programa de Pós-Graduação em Ecologia e Biomonitoramento",
     "type": "Projeto de Portfólio",
@@ -72,7 +72,7 @@
     "pages": null,
     "pdf_url": null,
     "url": "#",
-    "citation": "Birrer, C. G. (2023). Ciência de Dados Geoespaciais para Conservação da Biodiversidade. Universidade Federal da Bahia.",
+    "citation": "Birrer, C. G. (2020). Priorização espacial para a conservação de linhagens evolutivas independentes de Lutrinae do Neotrópico. Universidade Federal da Bahia.",
     "tags": ["Ciência de Dados", "Análise Geoespacial", "R", "Modelagem Ecológica", "Análise Bayesiana", "Biodiversidade", "Conservação", "Filogeografia"],
     "highlight": true,
     "languages": ["pt-br", "en"]

@@ -2,6 +2,22 @@
 
 > Quantificando ineficiência agrícola e trade-offs de sustentabilidade em escala global
 
+## Resumo
+
+**A Falha Metabólica na Agricultura Mundial**
+
+Desenvolvi uma análise quantitativa em escala global para avaliar se os ganhos de produtividade agrícola acompanharam proporcionalmente o aumento do uso de fertilizantes sintéticos.
+
+**Principais contribuições:**
+
+- Construção e padronização de dataset histórico global (FAO, 211 países, 1961–2022)
+- Criação de indicador original de eficiência/falha metabólica
+- Modelagem de tendências temporais por país via regressão linear
+- Comparação de padrões estruturais entre regiões e sistemas de produção
+- Geração de inteligência espacial global sobre dependência e ineficiência agrícola
+
+**Principal resultado:** A produtividade agrícola cresceu mundialmente — mas a dependência de fertilizantes cresceu numa proporção de ~2,8×, evidenciando um padrão generalizado de declínio na eficiência ecológica.
+
 ## Visão Geral do Projeto
 
 Neste projeto de doutorado, desenvolvi uma análise quantitativa em escala global para investigar um problema central da sustentabilidade agrícola: **o aumento da produtividade agrícola tem sido proporcional ao aumento do uso de insumos?**
@@ -16,6 +32,9 @@ Usando dados de 1961 a 2022, para 211 países e seis das principais commodities 
 - desigualdades entre Norte e Sul Global
 
 O resultado foi a criação de um **indicador quantitativo original de falha metabólica**, capaz de transformar uma hipótese teórica complexa em uma métrica comparável, escalável e orientada por dados.
+
+![''](/images/falha-metabolica/Imagem3.png "Falha metabólica no mundo")
+*Figura 1: razão entre os coeficientes de variação do complexo NPK e da produtividade para cada país. Os tons mais escuros refletem as maiores razões, sendo o valor máximo de 250, e os tons mais claros de amarelo representam razões mais baixas sendo os valores todos acima de zero. Em cinza estão os países não analisados.*
 
 ## Por que este projeto importa
 
@@ -99,6 +118,8 @@ O projeto incorporou uma dimensão espacial ao mapear a distribuição da falha 
 
 A produtividade agrícola mundial cresceu nas últimas décadas — mas **o uso de fertilizantes cresceu ainda mais rápido**.
 
+![''](/images/falha-metabolica/Imagem1.png "Aumento percentual do uso de fertilizantes e da produtividade em kg/ha entre 1961 e 2022 no mundo")
+
 ### Destaques
 
 - O uso global de fertilizantes aumentou fortemente ao longo do período
@@ -147,22 +168,10 @@ Este projeto posiciona quem o desenvolveu como alguém capaz de atuar em:
 
 Este projeto sintetiza minha capacidade de transformar problemas socioambientais complexos em estruturas analíticas escaláveis, combinando rigor estatístico, conhecimento de domínio e geração de insight orientado à tomada de decisão.
 
----
-
-## Resumo para Recrutadores
-
-**A Falha Metabólica na Agricultura Mundial**
-
-Desenvolvi uma análise quantitativa em escala global para avaliar se os ganhos de produtividade agrícola acompanharam proporcionalmente o aumento do uso de fertilizantes sintéticos.
-
-**Principais contribuições:**
-
-- Construção e padronização de dataset histórico global (FAO, 211 países, 1961–2022)
-- Criação de indicador original de eficiência/falha metabólica
-- Modelagem de tendências temporais por país via regressão linear
-- Comparação de padrões estruturais entre regiões e sistemas de produção
-- Geração de inteligência espacial global sobre dependência e ineficiência agrícola
-
-**Principal resultado:** A produtividade agrícola cresceu mundialmente — mas a dependência de fertilizantes cresceu numa proporção de ~2,8×, evidenciando um padrão generalizado de declínio na eficiência ecológica.
 
 **Tags:** Ciência de Dados · R · Feature Engineering · Modelagem Estatística · Análise de Séries Temporais · Sustentabilidade · ESG · Agritech · Dados da FAO · Análise Comparativa Global
+
+
+
+
+

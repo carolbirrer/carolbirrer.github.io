@@ -19,17 +19,15 @@
     },
     {
       "label": "Currículo Lattes",
-      "href": "http://lattes.cnpq.br/",
+      "href": "http://lattes.cnpq.br/6771761663174844",
       "icon": "fas fa-external-link-alt",
       "style": "btn-ghost",
       "external": true
     }
   ],
   "stats": [
-    { "number": "10+", "label": "Anos em Análise de Dados" },
-    { "number": "30+", "label": "Projetos Desenvolvidos" },
-    { "number": "3+",  "label": "Publicações Científicas" }
+ 
   ],
-  "photo": "images/map.png",
+  "photo": "images/carol.png",
   "photo_alt": "Dra. Caroline Gonçalves Birrer"
 }

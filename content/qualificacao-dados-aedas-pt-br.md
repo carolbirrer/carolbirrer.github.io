@@ -2,6 +2,20 @@
 
 > Consultoria de Dados · AEDAS · Programa Médio Rio Doce
 
+## Resumo 
+
+**Qualificação e Validação de Base de Dados Socioeconômica — AEDAS**
+
+Atuei em projeto de consultoria desenvolvendo a qualificação e validação de bases de dados socioeconômicas complexas para a AEDAS, integrando múltiplas tabelas, estruturando regras de consistência lógica e automatizando a identificação de erros, ausências, duplicidades e inconsistências cadastrais.
+
+**Principais contribuições:**
+
+- Integração relacional de 4 tabelas com cruzamento por chaves compostas
+- Desenvolvimento de rotinas Python para detecção automatizada de inconsistências
+- Validação de ~550 variáveis com dependências lógicas entre respostas
+- Estruturação de saídas padronizadas para auditoria e rastreabilidade
+- Suporte direto às equipes de gestão da informação na melhoria da confiabilidade da base
+
 ## Visão Geral do Projeto
 
 Atuei na qualificação e validação de uma base de dados complexa derivada do **Registro Familiar (RF)**, instrumento utilizado no âmbito do Programa Médio Rio Doce, com foco em identificar erros de preenchimento, inconsistências lógicas, problemas estruturais e falhas de integridade de dados.
@@ -23,7 +37,7 @@ O trabalho apoiou diretamente as equipes de Gestão da Informação e Mobilizaç
 
 ### 1. Engenharia e integração de dados
 
-Trabalhei com a consolidação de diferentes arquivos de dados — `tbAtingidos.csv`, `tbImoveisAt.csv`, `tbNucleoPR.csv` e `tbNucleoSC.csv` — realizando o cruzamento entre tabelas por chaves como `IDNucleo` e `ID de membro`, preservando registros e tratando ausências com valores nulos quando necessário.
+Trabalhei com a consolidação de diferentes arquivos de dados realizando o cruzamento entre tabelas por chaves preservando registros e tratando ausências com valores nulos quando necessário.
 
 Isso exigiu visão de **estrutura relacional**, integridade de chave e consistência entre tabelas.
 
@@ -39,13 +53,13 @@ Desenvolvi e apliquei rotinas para identificar:
 - CPFs inválidos ou duplicados
 - telefones e CEPs inconsistentes
 - nomes inválidos
-- duplicação de núcleos e indivíduos
+- duplicações de dados
 - erros de codificação e estrutura de identificadores
 - respostas fora de contexto ou quebrando regras de dependência lógica
 
 ### 4. Modelagem lógica de regras de negócio
 
-O projeto envolveu um questionário com aproximadamente **550 perguntas**, distribuídas entre dimensões de núcleo familiar e membros do núcleo, exigindo a construção de uma lógica robusta de validação entre campos, blocos e respostas condicionais.
+O projeto envolveu um questionário, distribuídas entre dimensões de núcleo familiar e membros do núcleo, exigindo a construção de uma lógica robusta de validação entre campos, blocos e respostas condicionais.
 
 ### 5. Estruturação de dados qualitativos e quantitativos
 
@@ -85,21 +99,5 @@ Em termos práticos, foi um projeto de **data quality, data wrangling, validaç�
 ## Stack Tecnológico
 
 **Python** · Manipulação de Dados · Limpeza de Dados · Data Quality · Validação de Regras de Negócio · Integração de Bases · Dados Relacionais · Dados Qualitativos e Quantitativos · Estruturação Analítica · Auditoria de Dados
-
----
-
-## Resumo para Recrutadores
-
-**Qualificação e Validação de Base de Dados Socioeconômica — AEDAS**
-
-Atuei em projeto de consultoria desenvolvendo a qualificação e validação de bases de dados socioeconômicas complexas para a AEDAS, integrando múltiplas tabelas, estruturando regras de consistência lógica e automatizando a identificação de erros, ausências, duplicidades e inconsistências cadastrais.
-
-**Principais contribuições:**
-
-- Integração relacional de 4 tabelas com cruzamento por chaves compostas
-- Desenvolvimento de rotinas Python para detecção automatizada de inconsistências
-- Validação de ~550 variáveis com dependências lógicas entre respostas
-- Estruturação de saídas padronizadas para auditoria e rastreabilidade
-- Suporte direto às equipes de gestão da informação na melhoria da confiabilidade da base
 
 **Tags:** Python · Data Quality · Data Wrangling · Dados Relacionais · Engenharia de Dados · Validação de Regras de Negócio · Dados Socioeconômicos · Auditoria de Dados · Consultoria

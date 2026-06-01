@@ -2,6 +2,22 @@
 
 > Integrando biodiversidade, vulnerabilidade social e dados oceanográficos para identificar zonas críticas de conflito
 
+## Resumo 
+
+**Modelagem Espacial de Risco — Foz do Amazonas**
+
+Desenvolvi um modelo espacial probabilístico para avaliar o risco de derramamento de óleo na Foz do Amazonas, integrando dados de biodiversidade, vulnerabilidade social, variáveis oceanográficas e áreas de exploração petrolífera.
+
+**Principais contribuições:**
+
+- Estruturação de base geoespacial multi-fonte
+- Desenvolvimento de modelo probabilístico de dispersão (Python + ensemble simulation)
+- Mapeamento de zonas críticas de conflito socioambiental (QGIS)
+- Quantificação de probabilidades de impacto por área e grupo biológico/social
+
+**Principal resultado:** > 55% de probabilidade de o óleo atingir o Sistema Recifal Amazônico e áreas prioritárias de biodiversidade; > 22% de probabilidade de atingir estuários, territórios indígenas e populações vulneráveis.
+
+
 ## Visão Geral do Projeto
 
 Desenvolvi um modelo espacial para avaliar o risco de derramamento de óleo na Foz do Amazonas, integrando dados ambientais, biodiversidade, vulnerabilidade social e variáveis oceanográficas para identificar áreas de maior sensibilidade e conflito.
@@ -11,6 +27,8 @@ O objetivo foi transformar um problema socioambiental altamente complexo em uma 
 ## Por que este projeto importa
 
 A Foz do Amazonas concentra um dos ecossistemas marinhos mais biodiversos e socialmente sensíveis do planeta. A pressão crescente por exploração petrolífera nessa região levanta questões críticas sobre risco ambiental, impacto social e tomada de decisão baseada em evidências.
+
+![''](/images/risco-foz-amazonas/Imagem1.png "Áreas ofertadas para leilão na Foz do Amazonas")
 
 Este projeto responde a essa questão com dados:
 
@@ -63,6 +81,12 @@ O modelo mostrou que, em um cenário de derramamento a partir dos blocos ofertad
 
 Além disso, foi identificada **forte sobreposição entre blocos de exploração e áreas ambientalmente sensíveis**, evidenciando alto potencial de conflito entre conservação e exploração econômica.
 
+![''](/images/risco-foz-amazonas/Imagem2.png "Mapeamento do alcance do óleo")
+*Figura 2: Mapa mostrando a probabilidade de o óleo atingir áreas circundantes em caso de derramamento proveniente dos blocos ofertados na 5ª Rodada de Licitações na região da Foz do Amazonas.*
+
+![''](/images/risco-foz-amazonas/Imagem3.png "Mapeamento do alcance do óleo com a corrente")
+*Figura 3: Mapa mostrando a probabilidade de o óleo atingir áreas circundantes em caso de derramamento proveniente dos blocos ofertados na 5ª Rodada de Licitações na região da Foz do Amazonas, considerando a direção das correntes oceânicas.*
+
 ## Habilidades Demonstradas
 
 - Python para modelagem ambiental
@@ -85,21 +109,8 @@ Este projeto demonstra a capacidade de:
 - integrar dados ecológicos, sociais e espaciais em uma estrutura coerente
 - construir soluções com potencial de uso em ESG, análise de risco, sustentabilidade, meio ambiente, planejamento territorial e políticas públicas
 
----
-
-## Resumo para Recrutadores
-
-**Modelagem Espacial de Risco — Foz do Amazonas**
-
-Desenvolvi um modelo espacial probabilístico para avaliar o risco de derramamento de óleo na Foz do Amazonas, integrando dados de biodiversidade, vulnerabilidade social, variáveis oceanográficas e áreas de exploração petrolífera.
-
-**Principais contribuições:**
-
-- Estruturação de base geoespacial multi-fonte
-- Desenvolvimento de modelo probabilístico de dispersão (Python + ensemble simulation)
-- Mapeamento de zonas críticas de conflito socioambiental (QGIS)
-- Quantificação de probabilidades de impacto por área e grupo biológico/social
-
-**Principal resultado:** > 55% de probabilidade de o óleo atingir o Sistema Recifal Amazônico e áreas prioritárias de biodiversidade; > 22% de probabilidade de atingir estuários, territórios indígenas e populações vulneráveis.
-
 **Tags:** Ciência de Dados · Python · Análise Geoespacial · Modelagem Probabilística · QGIS · Risk Analytics · ESG · Sustentabilidade · Planejamento Espacial Marinho
+
+
+
+

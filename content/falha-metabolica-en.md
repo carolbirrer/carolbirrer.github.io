@@ -2,6 +2,22 @@
 
 > Quantifying agricultural inefficiency and sustainability trade-offs at global scale
 
+## Summary
+
+**Metabolic Rift in Global Agriculture**
+
+Developed a global-scale quantitative analysis to evaluate whether agricultural productivity gains have kept pace with increasing synthetic fertilizer use.
+
+**Main contributions:**
+
+- Built and standardized a large historical agricultural dataset (FAO, 211 countries, 1961–2022)
+- Designed a custom sustainability efficiency metric
+- Modeled country-level temporal trends using regression
+- Compared structural patterns across regions and production systems
+- Generated interpretable global insights on agricultural dependence and inefficiency
+
+**Main insight:** Agricultural productivity increased globally — but fertilizer dependence grew at ~2.8× the rate, suggesting a widespread pattern of declining ecological efficiency in modern agricultural systems.
+
 ## Project Overview
 
 In this doctoral research project, I developed a global-scale quantitative analysis to investigate a core question in agricultural sustainability: **Have agricultural productivity gains kept pace with rising synthetic fertilizer use?**
@@ -16,6 +32,9 @@ Using historical data from 1961 to 2022, across 211 countries and six of the wor
 - structural inequalities between the Global North and Global South
 
 The result was the creation of an **original quantitative indicator of metabolic rift** — transforming a complex theoretical hypothesis into a comparable, scalable, data-driven metric.
+
+![''](/images/falha-metabolica/Imagem3.png "Global Metabolic Rift")
+*Figure 1: Ratio between the coefficients of variation of the NPK complex and crop productivity for each country. Darker shades indicate higher ratios, with a maximum value of 250, while lighter yellow shades represent lower ratios, all greater than zero. Countries not included in the analysis are shown in gray.*
 
 ## Why This Project Matters
 
@@ -99,6 +118,8 @@ The project incorporated a spatial dimension by mapping the global distribution 
 
 Agricultural productivity increased globally over recent decades — but **fertilizer use grew even faster**.
 
+![''](/images/falha-metabolica/Imagem1.png "Table 1: Percentage increase in fertilizer use and productivity (kg/ha) worldwide between 1961 and 2022.")
+
 ### Standout findings
 
 - Global fertilizer use increased substantially across the study period
@@ -147,22 +168,12 @@ This project positions its author as someone capable of working in:
 
 This project reflects my ability to transform complex socio-environmental questions into scalable, data-driven analytical frameworks — combining statistical rigor, domain expertise, and decision-oriented insight generation.
 
----
-
-## Short Recruiter-Friendly Summary
-
-**Metabolic Rift in Global Agriculture**
-
-Developed a global-scale quantitative analysis to evaluate whether agricultural productivity gains have kept pace with increasing synthetic fertilizer use.
-
-**Main contributions:**
-
-- Built and standardized a large historical agricultural dataset (FAO, 211 countries, 1961–2022)
-- Designed a custom sustainability efficiency metric
-- Modeled country-level temporal trends using regression
-- Compared structural patterns across regions and production systems
-- Generated interpretable global insights on agricultural dependence and inefficiency
-
-**Main insight:** Agricultural productivity increased globally — but fertilizer dependence grew at ~2.8× the rate, suggesting a widespread pattern of declining ecological efficiency in modern agricultural systems.
 
 **Tags:** Data Science · R · Feature Engineering · Statistical Modeling · Time Series Analysis · Sustainability · ESG · Agritech · FAO Data · Global Comparative Analysis
+
+
+
+
+
+
+
